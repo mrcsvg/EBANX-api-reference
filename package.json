@@ -2,12 +2,15 @@
   "name": "ebanx-payments",
   "version": "1.0.0",
   "dependencies": {
-    "@redocly/openapi-cli": "^0.8.3"
+    "@redocly/openapi-cli": "^0.8.3",
+    "openapi-cli": "0.0.2",
+    "redoc-cli": "^0.9.6"
   },
   "private": true,
   "scripts": {
     "start": "openapi preview-docs",
     "build": "openapi bundle -o dist",
+    "build-gh-pages": "rm -f docs/index.html && redoc-cli bundle dist/openapi.yaml && mv redoc-static.html docs/index.html",
     "test": "openapi validate"
   }
 }
