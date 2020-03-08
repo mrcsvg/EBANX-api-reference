@@ -2,8 +2,8 @@ language: node_js
 node_js:
   - "node"
 script:
-  - build
-  - build-gh-pages
+  - npm run build
+  - npm run build-gh-pages
 deploy:
   provider: pages
   skip_cleanup: true
