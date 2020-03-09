@@ -12,7 +12,7 @@ info:
   x-logo:
     url: 'https://redocly.github.io/openapi-template/logo.png'
   description:
-    $ref: /md_descriptions/test.md
+    $ref: md_descriptions/test.md
 externalDocs:
   description: Find out how to create a GitHub repo for your OpenAPI definition.
   url: 'https://github.com/Rebilly/generator-openapi-repo'
