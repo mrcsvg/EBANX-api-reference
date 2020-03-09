@@ -1,5 +1,7 @@
 This is an **example** API to demonstrate features of OpenAPI specification 
 
+#### <i class="icon-pencil"></i> Rename a document
+
 and this is a test with MD file in a different place
 
 e mostrando pro fernando
@@ -15,6 +17,13 @@ format](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.
 It also demonstrates features of
 [create-openapi-repo](https://github.com/Redocly/create-openapi-repo) tool
 and 
+
+
+Reference-style: 
+![alt text][logo]
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png
+
 
 [Redoc](https://github.com/Redocly/Redoc) documentation engine. So beyond
 the standard OpenAPI syntax we use a few 
