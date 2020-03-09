@@ -10,7 +10,7 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
   x-logo:
-    url: 'https://redocly.github.io/openapi-template/logo.png'
+    url: 'https://www.ebanx.com/wp-content/themes/ebanx/images/logo.svg'
   description:
     $ref: md_descriptions/test.md
 externalDocs:
@@ -29,6 +29,8 @@ paths:
     $ref: 'paths/users@{username}.yaml'
   /echo:
     $ref: paths/echo.yaml
+  /direct:
+    $ref: paths/direct.yaml
 components:
   securitySchemes:
     main_auth:
