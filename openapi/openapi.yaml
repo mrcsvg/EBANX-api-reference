@@ -10,7 +10,7 @@ info:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
   x-logo:
-    url: 'https://www.ebanx.com/wp-content/themes/ebanx/images/logo.svg'
+    url: 'https://mrcsvg.github.io/EBANX-api-reference/assets/ebanx-logo-vector.svg'
   description:
     $ref: md_descriptions/test.md
 externalDocs:
