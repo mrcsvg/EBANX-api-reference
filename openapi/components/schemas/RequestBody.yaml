@@ -1,0 +1,22 @@
+type: object
+properties:
+  integration_key:
+    type: string
+    description: Your unique and secret integration key.
+    example: \ {Your integration key}
+    minLength: 1
+    maxLength: 100
+  operation:
+    type: string
+    description: Must be `request`
+    example: request
+    minLength: 7
+    maxLength: 7
+  mode:  
+    type: string
+    description: Currently only ``full`` mode is available.
+    example: 000.000.001-91
+    minLength: 4
+    maxLength: 4
+  payment:
+    $ref: Payment.yaml

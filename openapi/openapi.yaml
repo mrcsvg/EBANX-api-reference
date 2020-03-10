@@ -1,50 +1,31 @@
 openapi: 3.0.2
 info:
   version: 1.0.0
-  title: Example.com
+  title: EBANX Payment - 3DS 2.0
   termsOfService: 'https://example.com/terms/'
   contact:
-    email: contact@example.com
-    url: 'http://example.com/contact'
-  license:
-    name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+    email: integration@ebanx.com
+    url: 'http://www.ebanx.com'
   x-logo:
     url: 'https://mrcsvg.github.io/EBANX-api-reference/assets/ebanx-logo-vector.svg'
   description:
     $ref: md_descriptions/test.md
+
 externalDocs:
-  description: Find out how to create a GitHub repo for your OpenAPI definition.
-  url: 'https://github.com/Rebilly/generator-openapi-repo'
+  description: More documentation about EBANX is also available in our developers portal
+  url: 'https://developers.ebanx.com'
 tags:
-  - name: Echo
-    description: Example echo operations
-  - name: User
-    description: Operations about user
+  - name: Payment with 3DS
+    description: Example 3DS 2.0 Payment
 servers:
-  - url: 'http://example.com/api/v1'
-  - url: 'https://example.com/api/v1'
+  - url: 'https://api.ebanxpay.com/'
+  - url: 'https://sandbox.ebanxpay.com/'
 paths:
-  '/users/{username}':
-    $ref: 'paths/users@{username}.yaml'
-  /echo:
-    $ref: paths/echo.yaml
-  /direct:
+  /ws/direct:
     $ref: paths/direct.yaml
 components:
   securitySchemes:
-    main_auth:
-      type: oauth2
-      flows:
-        implicit:
-          authorizationUrl: 'http://example.com/api/oauth/dialog'
-          scopes:
-            'read:users': read users info
-            'write:users': modify or remove users
-    api_key:
+    integration_key:
       type: apiKey
-      in: header
-      name: api_key
-    basic_auth:
-      type: http
-      scheme: basic
+      in: body  # gambiarra, mas funcionou
+      name: integration_key
