@@ -25,6 +25,14 @@ Reference-style:
 [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png
 
 
+Reference-style: 
+![alt text][diagrama] 
+
+[diagrama]: https://mrcsvg.github.io/EBANX-api-reference/assets/ebanx-logo-vector.svg
+
+
+
+
 [Redoc](https://github.com/Redocly/Redoc) documentation engine. So beyond
 the standard OpenAPI syntax we use a few 
 

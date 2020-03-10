@@ -1,0 +1,53 @@
+type: object
+properties:
+  card_number:
+    description: User supplied username
+    type: string
+    minLength: 4
+    example: John78
+  card_name:
+    description: User first name
+    type: string
+    minLength: 1
+    example: John
+  card_due_date:
+    description: User last name
+    type: string
+    minLength: 1
+    example: Smith
+  card_cvv:
+    description: User last name
+    type: string
+    minLength: 1
+    example: Smith
+  auto_capture:
+    description: User last name
+    type: string
+    minLength: 1
+    example: Smith
+  threeds_eci:
+    description: User last name
+    type: string
+    minLength: 1
+    example: 05
+  threeds_cryptogram:
+    description: User last name
+    type: string
+    minLength: 1
+    example: AAIBAkl0NwmHglFBAXQ3AAAAAAA=
+  threeds_xid:
+    description: User last name
+    type: string
+    minLength: 1
+    example: AAIBAkl0NwmHglFBAXQ3AAAAAAA=
+
+#"card": {
+#      "card_number": "498453******3039",
+#      "card_name": "mauricio de nassau",
+#      "card_due_date": "11/2024",
+#      "card_cvv": "***",
+#      "auto_capture": "true",
+#      "threeds_eci": "05",
+#      "threeds_cryptogram": "AAIBAkl0NwmHglFBAXQ3AAAAAAA=",
+#      "threeds_xid": "AAIBAkl0NwmHglFBAXQ3AAAAAAA="
+#    }
