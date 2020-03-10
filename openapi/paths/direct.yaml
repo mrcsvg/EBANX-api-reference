@@ -1,56 +1,116 @@
 post:
   tags:
-    - Direct
-  summary: Echo test
-  description: Receive the exact message you've sent
+    - Payment with 3DS
+  summary: DebitCard w/ 3DS 2
+  description: |
+    # teste 1
+    ## Teste 2
+    > Receive the exact message you've sent
+    
+    > **Note** 
+    > If you have any questions regarding technical issues, feel free to contact us by clicking here or sending an e-mail to integration@ebanx.com. Additionally, if you have doubts about our pricing, fees or products, you can contact your Business Development Analyst.
+
   operationId: direct
   security:
-    - api_key: []
-    - basic_auth: []
-  responses:
+    - integration_key: []
+  responses: 
     '200':
       description: OK
-      headers:
-        X-Rate-Limit:
-          description: calls per hour allowed by the user
-          schema:
-            type: integer
-            format: int32
-        X-Expires-After:
-          $ref: ../components/headers/ExpiresAfter.yaml
       content:
         application/json:
-          schema:
-            type: string
           examples:
-            response:
-              value: Hello world!
-        application/xml:
-          schema:
-            type: string
-        text/csv:
-          schema:
-            type: string
+            Funcionou: #todo mudar
+              value : 
+                {
+                  "payment": {
+                    "hash": "5e26f188795d47b8ba9fa0ca9b97f02bc20cb2fc11fdc519",
+                    "pin": "580117099",
+                    "country": "br",
+                    "merchant_payment_code": "1579610503",
+                    "order_number": null,
+                    "status": "CO",
+                    "status_date": "2020-01-21 12:41:44",
+                    "open_date": "2020-01-21 12:41:43",
+                    "confirm_date": "2020-01-21 12:41:44",
+                    "transfer_date": null,
+                    "amount_br": "1.00",
+                    "amount_ext": "1.00",
+                    "amount_iof": "0.00",
+                    "amount_usd": "0.22",
+                    "currency_rate_usd": "4.4786",
+                    "currency_rate": "1.0000",
+                    "currency_ext": "BRL",
+                    "due_date": "2020-01-24",
+                    "instalments": "1",
+                    "payment_type_code": "debitcard",
+                    "details": {
+                      "billing_descriptor": "EBANX*DEMOMERCHANT"
+                    },
+                    "transaction_status": {
+                      "acquirer": "EBANX",
+                      "code": "OK",
+                      "description": "Accepted",
+                      "authcode": "134903"
+                    },
+                    "pre_approved": true,
+                    "capture_available": false,
+                    "customer": {
+                      "document": "08810857909",
+                      "email": "test@test.com",
+                      "name": "GABRIELY SIMETTE",
+                      "birth_date": "1997-10-24"
+                    }
+                  },
+                  "status": "SUCCESS"
+                }  
+            seila:
+              value : 
+                {
+                  "payment": {
+                    "hash": "5e26f188795d47b8ba9fa0ca9b97f02bc20cb2fc11fdc519",
+                    "pin": "580117099",
+                    "country": "br",
+                    "merchant_payment_code": "1579610503",
+                    "order_number": null,
+                    "status": "CO",
+                    "status_date": "2020-01-21 12:41:44",
+                    "open_date": "2020-01-21 12:41:43",
+                    "confirm_date": "2020-01-21 12:41:44",
+                    "transfer_date": null,
+                    "amount_br": "1.00",
+                    "amount_ext": "1.00",
+                    "amount_iof": "0.00",
+                    "amount_usd": "0.22",
+                    "currency_rate_usd": "4.4786",
+                    "currency_rate": "1.0000",
+                    "currency_ext": "BRL",
+                    "due_date": "2020-01-24",
+                    "instalments": "1",
+                    "payment_type_code": "debitcard",
+                    "details": {
+                      "billing_descriptor": "EBANX*DEMOMERCHANT"
+                    },
+                    "transaction_status": {
+                      "acquirer": "EBANX",
+                      "code": "OK",
+                      "description": "Accepted",
+                      "authcode": "134903"
+                    },
+                    "pre_approved": true,
+                    "capture_available": false,
+                    "customer": {
+                      "document": "08810857909",
+                      "email": "test@test.com",
+                      "name": "GABRIELY SIMETTE",
+                      "birth_date": "1997-10-24"
+                    }
+                  },
+                  "status": "SUCCESS"
+                }            
   requestBody:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/PaymentBody.yaml'
+          $ref: '../components/schemas/RequestBody.yaml'
     description: Payment body object
     required: true
-
-
-
-#  requestBody:
-#    content:
-#      application/json:
-#        schema:
-#          type: string
-#          example: Hello world!
-#      application/xml:
-#        schema:
-#          type: string
-#          example: Hello world!
-#    description: Echo payload
-#    required: true
-
