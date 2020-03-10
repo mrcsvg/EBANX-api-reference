@@ -27,5 +27,5 @@ components:
   securitySchemes:
     integration_key:
       type: apiKey
-      in: body  # gambiarra, mas funcionou
+      in: query  # gambiarra, mas funcionou
       name: integration_key
