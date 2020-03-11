@@ -13,22 +13,31 @@ Unlike the 3DS 1, the 3DS 2 simplifies the payment process by providing a larger
 ## Payment flow
 We have two major scenarios to process payments using the 3DS 2.
 ### 1. Merchants that have their own 3DS Server
+
 ![alt text][diagrama] 
+
 [diagrama]: https://mrcsvg.github.io/EBANX-api-reference/assets/diagram.svg
-Merchant -> External \nAuthenticator: (1) Request payment with 3DS
-Note left of External \nAuthenticator: Authenticate \ncustomer
-External \nAuthenticator --> Merchant: (2) Cryptogram Data
-Merchant -> EBANX : (3) Payment request with Cryptogram data
-EBANX --> Merchant : (4) Payment response
+
 1. Merchant authenticates transaction using its own 3DS Server
 2. Merchant gets the Cryptogram data that
 3. Merchant requests a payment to EBANX using the Cryptogram data
 4. EBANX process the transactions and return the result
+
 ### 2. Merchants that do not have their own 3DS Server
-Under development.
+- Under development
+
+
 # Sandbox testing
-Under development.
-#### Authentication without challenge and successful authorization
-#### Authentication without challenge and failed authorization
-#### Authentication with challenge and sucessful authorization
-#### Authentication with challenge and failed authorization
+- ⚠️ Under development 
+
+
+| Scenario | Data |
+ ----- | ----- 
+ Authentication without challenge and successful authorization | Under development
+- Authentication without challenge and failed authorization | Under development
+- Authentication with challenge and sucessful authorization | Under development
+- Authentication with challenge and failed authorization |Under development
+
+
+# Authentication 😎
+Lorem ipsem
