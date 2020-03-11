@@ -1,8 +1,8 @@
 openapi: 3.0.2
 info:
-  version: 1.0.0
+  version: 0.9.2
   title: EBANX Payment - 3DS 2.0
-  termsOfService: 'https://example.com/terms/'
+  termsOfService: 'https://business.ebanx.com/en/legal-terms/for-customers/privacy-policy'
   contact:
     email: integration@ebanx.com
     url: 'http://www.ebanx.com'

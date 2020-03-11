@@ -3,7 +3,6 @@ required:
   - card_number
   - card_name
   - card_due_date
-  - card_cvv
   - auto_capture
   - threeds_eci
   - threeds_cryptogram
@@ -33,11 +32,6 @@ properties:
     minLength: 3
     maxLength: 4
     example: 123
-  auto_capture: #verificar com o rafa
-    description: |
-      If true, the payment will be captured automatically by EBANX; if false, the payment will have to be captured by the merchant using the API method capture. The default value is true.
-    type: boolean
-    example: true
   threeds_eci:
     description: |
       Value returned by the Directory Server to indicate the result of the authentication.
@@ -51,7 +45,7 @@ properties:
       - "07"
     minLength: 1
     maxLength: 2
-    example: 05
+    example: "05"
   threeds_cryptogram:
     description: Hash of the authentication.
     type: string

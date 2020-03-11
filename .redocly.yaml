@@ -6,7 +6,16 @@ lint:
     no-unused-schemas: warning
 referenceDocs:
   htmlTemplate: ./docs/index.html
+  disableSearch: false
+  jsonSampleExpandLevel: 3
+  noAutoAuth: true
+  expandDefaultServerVariables: true
+  hideDownloadButton: true
   theme:
     colors:
       primary:
         main: "#32329f"
+    spacing:
+      unit: 5 # CE  # main spacing unit used in autocomputed theme values later
+      sectionHorizontal: 40 # CE  # Horizontal section padding. COMPUTED: spacing.unit * 8
+      sectionVertical: 15 # CE  # Horizontal section padding. COMPUTED: spacing.unit * 8

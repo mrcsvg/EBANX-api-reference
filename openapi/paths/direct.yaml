@@ -3,6 +3,16 @@ post:
     - Payment with 3DS
   summary: DebitCard 3DS 2
   description: |
+
+    The main differences from a normal request are the 3 fields related to the 3DS authentication:
+    - `threeds_eci`
+    - `threeds_cryptogram`
+    - `threeds_xid`   
+    
+    Also, since we are piloting with debit cards right now, the ``payment_type_code`` must be changed to ``debitcard``.  
+
+    **Please note:** 👀 For debit cards in Brazil 🇧🇷 the usage of the 3DS 2 protocol is mandatory.
+
     > **Note** 
     > If you have any questions regarding technical issues, feel free to contact us by clicking here or sending an e-mail to integration@ebanx.com. Additionally, if you have doubts about our pricing, fees or products, you can contact your Business Development Analyst.
 
@@ -14,6 +24,8 @@ post:
       description: OK
       content:
         application/json:
+          schema:
+            $ref: '../components/schemas/PaymentResponse.yaml'
           examples:
             Funcionou: #todo mudar
               value : 
@@ -58,51 +70,7 @@ post:
                     }
                   },
                   "status": "SUCCESS"
-                }  
-            seila:
-              value : 
-                {
-                  "payment": {
-                    "hash": "5e26f188795d47b8ba9fa0ca9b97f02bc20cb2fc11fdc519",
-                    "pin": "580117099",
-                    "country": "br",
-                    "merchant_payment_code": "1579610503",
-                    "order_number": null,
-                    "status": "CO",
-                    "status_date": "2020-01-21 12:41:44",
-                    "open_date": "2020-01-21 12:41:43",
-                    "confirm_date": "2020-01-21 12:41:44",
-                    "transfer_date": null,
-                    "amount_br": "1.00",
-                    "amount_ext": "1.00",
-                    "amount_iof": "0.00",
-                    "amount_usd": "0.22",
-                    "currency_rate_usd": "4.4786",
-                    "currency_rate": "1.0000",
-                    "currency_ext": "BRL",
-                    "due_date": "2020-01-24",
-                    "instalments": "1",
-                    "payment_type_code": "debitcard",
-                    "details": {
-                      "billing_descriptor": "EBANX*DEMOMERCHANT"
-                    },
-                    "transaction_status": {
-                      "acquirer": "EBANX",
-                      "code": "OK",
-                      "description": "Accepted",
-                      "authcode": "134903"
-                    },
-                    "pre_approved": true,
-                    "capture_available": false,
-                    "customer": {
-                      "document": "08810857909",
-                      "email": "test@test.com",
-                      "name": "GABRIELY SIMETTE",
-                      "birth_date": "1997-10-24"
-                    }
-                  },
-                  "status": "SUCCESS"
-                }            
+                }           
   requestBody:
     content:
       application/json:
