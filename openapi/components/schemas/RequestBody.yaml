@@ -1,4 +1,9 @@
 type: object
+required:
+  - integration_key
+  - operation
+  - mode
+  - payment
 properties:
   integration_key:
     type: string

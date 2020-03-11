@@ -1,0 +1,35 @@
+curl --location --request POST 'https://sandbox.ebanxpay.com/ws/direct' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "integration_key": "\\ {Your integration key}",
+  "operation": "request",
+  "mode": "000.000.001-91",
+  "payment": {
+    "merchant_payment_code": "0x0W05D2-T01",
+    "amount_total": 1000.99,
+    "currency_code": "BRL",
+    "name": "James Bond",
+    "email": "james.bond@ebanx.com",
+    "birth_date": "12/04/1979",
+    "document": "000.000.001-91",
+    "address": "Rua João Negrão",
+    "street_number": 123,
+    "city": "Curitiba",
+    "state": "PR",
+    "zipcode": "03638010",
+    "country": "BR",
+    "phone_number": 11989989999,
+    "payment_type_code": "debitcard",
+    "instalments": 1,
+    "card": {
+      "card_number": 4111111111111111,
+      "card_name": "James Bond",
+      "card_due_date": "12/2025",
+      "card_cvv": 123,
+      "auto_capture": true,
+      "threeds_eci": 5,
+      "threeds_cryptogram": "AAIBAkl0NwmHglFBAXQ3AAAAAAA=",
+      "threeds_xid": "AAIBAkl0NwmHglFBAXQ3AAAAAAA="
+    }
+  }
+}'

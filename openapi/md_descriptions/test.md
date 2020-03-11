@@ -18,25 +18,19 @@ There are some requirements to follow before making the integration that you can
 
 
 # About 3D Secure 2
-
-> **Note:**
-> - StackEdit is accessible offline after the application has been loaded for the first time.
-> - Your local documents are not shared between different browsers or computers.
-> - Clearing your browser's data may **delete all your local documents!** Make sure your documents are synchronized with **Google Drive** or **Dropbox** (check out the [<i class="icon-refresh"></i> Synchronization](#synchronization) section).
-
-## Overview
-
 3D Secure, or 3DS, is a technical standard that adds a layer of security in online credit and debit card transactions, protecting the buyer's against unauthorised use. One of the main advantages of the protocol is the shift in liability of fraudulent chargebacks. If the transaction was authenticated, the liability of the transaction shifts from the merchant to the issuer.
 
 3DS 2.0 simplifies the payment process by providing a larger set of cardholder information to the issuer, allowing for improved risk assessment and the ability to skip authentication challenge processes altogether for low risk transactions, leading to lower abandonment rates and better user experience.
 
 Currently, we offer 3DS 2.0 for debit card transactions in Brazil with external authentication.
 
-## SCA in Europe
-
-Lorem ipsem
-
 ## Payment flow
+
+We have two major scenarios (integration-wise):
+### Merchants that have their own authenticator/MPI
+
+
+
 
 Reference-style: 
 ![alt text][diagrama] 
