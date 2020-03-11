@@ -16,7 +16,6 @@ externalDocs:
   url: 'https://developers.ebanx.com'
 tags:
   - name: Payment with 3DS
-    description: Example 3DS 2.0 Payment
 servers:
   - url: 'https://api.ebanxpay.com/'
   - url: 'https://sandbox.ebanxpay.com/'

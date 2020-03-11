@@ -1,4 +1,23 @@
 type: object
+required:
+  - merchant_payment_code
+  - amount_total
+  - currency_code
+  - name
+  - email
+  - birth_date
+  - document
+  - address
+  - street_number
+  - city
+  - state
+  - zipcode
+  - country
+  - phone_number
+  - payment_type_code
+  - instalments
+  - card
+  - card_number
 properties:
   merchant_payment_code:
     type: string
@@ -113,22 +132,8 @@ properties:
     description: |
       The two-letter country code for the customer country. The available codes/countries are:
       - **BR:** Brazil.
-      - **PE: Peru.
-      - **MX: Mexico.
-      - **CO: Colombia.
-      - **CL: Chile.
-      - **AR: Argentina.
-      - **EC: Ecuador.
-      - **BO: Bolivia.
     enum:
       - BR
-      - PE
-      - MX
-      - CO
-      - CL
-      - AR
-      - EC
-      - BO
     example: BR
   phone_number:
     type: string

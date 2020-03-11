@@ -1,12 +1,8 @@
 post:
   tags:
     - Payment with 3DS
-  summary: DebitCard w/ 3DS 2
+  summary: DebitCard 3DS 2
   description: |
-    # teste 1
-    ## Teste 2
-    > Receive the exact message you've sent
-    
     > **Note** 
     > If you have any questions regarding technical issues, feel free to contact us by clicking here or sending an e-mail to integration@ebanx.com. Additionally, if you have doubts about our pricing, fees or products, you can contact your Business Development Analyst.
 
@@ -114,3 +110,7 @@ post:
           $ref: '../components/schemas/RequestBody.yaml'
     description: Payment body object
     required: true
+  x-code-samples:
+    - lang: Curl
+      source:
+        $ref: ../code_samples/CURL/direct/post.curl

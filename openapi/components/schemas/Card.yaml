@@ -1,4 +1,13 @@
 type: object
+required:
+  - card_number
+  - card_name
+  - card_due_date
+  - card_cvv
+  - auto_capture
+  - threeds_eci
+  - threeds_cryptogram
+  - threeds_xid
 properties:
   card_number:
     description: Credit/debit card number.
@@ -30,19 +39,27 @@ properties:
     type: boolean
     example: true
   threeds_eci:
-    description: ...
+    description: |
+      Value returned by the Directory Server to indicate the result of the authentication.
     type: string
+    enum:
+      - "00"
+      - "01"
+      - "02"
+      - "05"
+      - "06"
+      - "07"
     minLength: 1
     maxLength: 2
     example: 05
   threeds_cryptogram:
-    description: ...
+    description: Hash of the authentication.
     type: string
     minLength: 1
     maxLength: 32
     example: AAIBAkl0NwmHglFBAXQ3AAAAAAA=
   threeds_xid:
-    description: ...
+    description: Unique identifier of the transaction. Generated automatically and is tipically 28 bytes and base64.
     type: string
     minLength: 1
     maxLength: 28
