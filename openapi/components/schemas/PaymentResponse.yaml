@@ -1,0 +1,201 @@
+type: object
+properties:
+  payment:
+    type: object
+    properties:
+      hash:
+        type: string
+        description: The payment hash (EBANX unique identifier).
+        example: 5e26f188795d47b8ba9fa0ca9b97f02bc20cb2fc11fdc519
+        minLength: 48
+        maxLength: 48
+      pin:
+        type: string
+        description: The payment PIN (EBANX and Customer unique identifier).
+        example: 580117099
+        minLength: 41
+        maxLength: 41
+      country:   
+        type: string
+        description: The country of the payment.
+        example: br
+        minLength: 2
+        maxLength: 2
+      merchant_payment_code:
+        type: string
+        description: The payment hash Merchant Payment Code (unique merchant ID).
+        example: 1579610503
+        minLength: 1
+        maxLength: 40
+      order_number:
+        type: string
+        description: |
+          The order number, optional identifier set by the merchant. You can have multiple payments with the same order number.
+        example: 123
+        minLength: 1
+        maxLength: 40
+      status:
+        type: string
+        description: |
+          The payment status. The following statuses are available:
+            **-OP:** the customer has not yet filled the payment details on the EBANX Checkout. It can change either to CA (time out) or PE.
+            **-PE:** the payment is pending confirmation. It can change either to CA or CO.
+            **-CO:** the payment is confirmed (paid).
+            **-CA:** the payment is cancelled.
+        example: CO
+        minLength: 2
+        maxLength: 2
+      status_date:
+        type: string
+        description: The date and hour of the last status change (UTC).
+        example: "2020-01-21 12:41:44"
+        minLength: 19
+        maxLength: 19
+      open_date:
+        type: string
+        description: The date and hour of when the payment was created (UTC).
+        example: "2020-01-21 12:41:43"
+        minLength: 19
+        maxLength: 19
+      confirm_date:
+        type: string
+        description: The date and hour of when the payment was confirmed (UTC).
+        example: "2020-01-21 12:41:44"
+        minLength: 19
+        maxLength: 19
+      transfer_date:
+        type: string
+        description: The date and hour of when the payment was settled (UTC).
+        example: ...
+        minLength: 19
+        maxLength: 19
+      amount_br:
+        type: number
+        description: The amount in local currency.
+        example: 1.00
+      amount_ext:
+        type: number
+        description: The tax amount in local currency (varies between countries).
+        example: 1.00
+      amount_iof:
+        type: number
+        description: The amount in the original currency.
+        example: 1.00
+      amount_usd:
+        type: number
+        description: The exchange rate used in the payment.
+        example: 0.22
+      currency_ext:
+        type: string
+        description: Three-letter code (ISO 4217) of the original currency.
+        example: BRL
+        minLength: 3
+        maxLength: 3
+      currency_rate_usd:
+        type: number
+        description: xxxx
+        example: 4.4786
+      currency_rate:
+        type: number
+        description: The exchange rate used in the payment.
+        example: 1.0000
+      due_date:
+        type: string
+        description: |
+          The due date of payments slips. Boletos issued in USD can have a maximum expiry period of three days; boletos issued in BRL can have an extended expiry date. The due date is based on local time of the country that the payment is generated. (YYYY-MM-DD)
+        example: "2020-01-24"
+        minLength: 10
+        maxLength: 10
+      instalments:
+        type: number
+        description: Number of instalments for the payment, default value is 1.
+        example: 1
+      payment_type_code:
+        type: string
+        description: The code of the payment method.
+        example: debitcard
+        minLength: 32
+        maxLength: 32
+      capture_available:
+        type: boolean
+        description: |
+          Flag that shows if a payment is ready to be captured. Applies only to credit cards when auto_capture is set to false. Some remarks on this attribute:
+
+          *A payment can only be captured if pre_approved value is true, which means that the payment has been pre approved by the credit card acquirer. Before capture, an authorized payment has status as PE (pending). After the capture, the status changes to CO (confirmed). A payment can only be captured if the status is PE (pending). *Payments must be captured in 4 (four) days, otherwise they are automatically cancelled.*
+          **NOTE:** It can be changed up to 5 (five) days.
+        example: false
+      pre_approved:
+        type: boolean
+        description: Flag that shows if a payment is pre-approved by the credit card acquirer.
+        example: true
+      transaction_status:
+        type: object
+        properties:
+          acquirer:
+            type: string
+            description: The acquirer that processed the transaction.
+            example: EBANX
+            minLength: 16
+            maxLength: 16   
+          code:
+            type: string
+            description: |
+              The transaction status code:
+
+              **-OK:** The transaction amount was approved.
+              **-NOK:** The acquirer did not approved the transaction. The customer must contact the issuer to check for any issue with his credit card.
+              **-RETRY:** Something went wrong with the process. You can retry with the same data. We recommend you to try more 3 times on different periods of time (first try, then second try after 2 hours after the first, etc).
+              You can see more of these status HERE.  https://developers.ebanx.com/guides/understanding-credit-card-transactions/
+            example: OK
+            minLength: 2
+            maxLength: 7  
+          description:
+            type: string
+            description: The description for the status code, which is returned from the acquirer.
+            example: Accepted
+            minLength: 1
+            maxLength: 500   
+          authcode:
+            type: string
+            description: Transaction authentication code in the acquirer.
+            example: 134903
+            minLength: 40
+            maxLength: 40 
+      customer:
+        type: object
+        properties:
+          document:   #TODO Criar YAML ref
+            type: string
+            description: |
+              Customers document number.
+              - **Brazil:** requires a valid CPF (natural person taxpayer ID) or CNPJ (business taxpayer ID).
+            example: 08810857909
+          email:
+            type: string
+            description: Customer email address.
+            example: james.bond@ebanx.com
+            minLength: 5
+            maxLength: 100
+          name:
+            type: string
+            description: Customer name.
+            example: James Bond
+            minLength: 1
+            maxLength: 100
+          birth_date:
+            type: string
+            description: Customer birth date in DD/MM/YYYY format
+            example: 12/04/1979
+            minLength: 10
+            maxLength: 10
+      details:
+        type: object
+        properties:
+          billing_descriptor: 
+            type: string
+            description: The billing descriptor of the payment.
+            example: "EBANX*DEMOMERCHANT"
+  status:
+    type: string
+    description: The status of the the request (SUCCESS or ERROR).
+    example: SUCCESS
