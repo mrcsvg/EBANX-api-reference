@@ -1,0 +1,37 @@
+post:
+  tags:
+    - Refund
+  summary: DebitCard 3DS 2
+  description: |
+
+    This is a description
+    > **Note** 
+    > This is a description
+
+  operationId: refund
+  security:
+    - integration_key: []
+  responses: 
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/PaymentResponse.yaml'
+          examples:
+            OK: #todo mudar
+              value : 
+                {
+                  "say": "hello world"
+                }           
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/RequestBody.yaml'
+    description: Payment body object
+    required: true
+  x-code-samples:
+    - lang: Curl
+      source:
+        $ref: ../../code_samples/CURL/direct/post.curl

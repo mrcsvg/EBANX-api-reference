@@ -15,16 +15,100 @@ externalDocs:
   description: More documentation about EBANX is also available in our developers portal
   url: 'https://developers.ebanx.com'
 tags:
-  - name: Payment with 3DS
+  - name: Make a payment
+  - name: After the payment
+  - name: Tokenization
+  - name: FX
+  - name: Utils 
+  - name: Payout
+  - name: Credit Card
+  - name: Boleto
+  - name: Cancel
+  - name: Refund
+
 servers:
   - url: 'https://api.ebanxpay.com/'
   - url: 'https://sandbox.ebanxpay.com/'
 paths:
+  # Before payment
+  ## FX
+  /ws/exchange:
+    $ref: paths/beforePayment/FX/exchange.yaml
+  /ws/fxtoken/get:
+    $ref: paths/beforePayment/FX/getFXToken.yaml
+
+  ## 
+
+
+  # Make a payment
   /ws/direct:
-    $ref: paths/direct.yaml
+    $ref: paths/makePayment/direct.yaml
+  /ws/capture:
+    $ref: paths/makePayment/capture.yaml
+  # After payment
+  /ws/cancel:
+    $ref: paths/afterPayment/cancel.yaml
+  /ws/refund:
+    $ref: paths/afterPayment/cancelOrRefund.yaml
+  /ws/refundOrCancel:
+    $ref: paths/afterPayment/refund.yaml
+
+
+
+  # Check customer balance
+  /ws/documentBalance:
+    $ref: paths/utils/documentBalance.yaml
+
+  # Utils
+  /ws/zipcode:
+    $ref: paths/utils/zipcode.yaml
+  /ws/tracking:
+    $ref: paths/utils/tracking.yaml
+
+  # Tokenization:
+  /ws/token:
+    $ref: paths/beforePayment/tokenization/token.yaml
+
+  /ws/token/setCVV:
+    $ref: paths/beforePayment/tokenization/setCVV.yaml
+
+
+
+  # Vish zone
+  /ws/request:
+    $ref: paths/utils/request.yaml
+
+  /ws/query:
+    $ref: paths/utils/query.yaml
+
+  /ws/print:
+    $ref: paths/utils/print.yaml
+
+  /ws/getBankList:
+    $ref: paths/utils/getBankList.yaml
+
+
+
 components:
   securitySchemes:
     integration_key:
       type: apiKey
       in: query  # gambiarra, mas funcionou
       name: integration_key
+x-tagGroups:
+  - name: Before payment
+    tags:
+      - FX
+      - Tokenization
+  - name: Make a payment
+    tags:
+      - Credit Card
+      - Debit Card
+      - Boleto
+  - name: After the payment
+    tags:
+      - Cancel
+      - Refund
+  - name: Utillities
+    tags:
+      - Utils

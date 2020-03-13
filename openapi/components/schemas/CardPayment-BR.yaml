@@ -1,4 +1,5 @@
 type: object
+title: Brazil 🇧🇷
 required:
   - merchant_payment_code
   - amount_total

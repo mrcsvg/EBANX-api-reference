@@ -1,20 +1,11 @@
 post:
   tags:
-    - Payment with 3DS
-  summary: DebitCard 3DS 2
+    - Credit Card
+  summary: Credit Card payments
   description: |
 
-    The main differences from a normal request are the 3 fields related to the 3DS authentication:
-    - `threeds_eci`
-    - `threeds_cryptogram`
-    - `threeds_xid`   
-    
-    Also, since we are piloting with debit cards right now, the ``payment_type_code`` must be changed to ``debitcard``.  
-
-    **Please note:** 👀 For debit cards in Brazil 🇧🇷 the usage of the 3DS 2 protocol is mandatory.
-
     > **Note** 
-    > If you have any questions regarding technical issues, feel free to contact us by clicking here or sending an e-mail to integration@ebanx.com. Additionally, if you have doubts about our pricing, fees or products, you can contact your Business Development Analyst.
+    > This is a note
 
   operationId: direct
   security:
@@ -25,7 +16,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/PaymentResponse.yaml'
+            $ref: '../../components/schemas/PaymentResponse.yaml'
           examples:
             Funcionou: #todo mudar
               value : 
@@ -75,10 +66,10 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/RequestBody.yaml'
+          $ref: '../../components/schemas/CardPayment.yaml'
     description: Payment body object
     required: true
   x-code-samples:
     - lang: Curl
       source:
-        $ref: ../code_samples/CURL/direct/post.curl
+        $ref: ../../code_samples/CURL/direct/post.curl
