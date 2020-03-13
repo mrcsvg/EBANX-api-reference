@@ -24,4 +24,6 @@ properties:
     minLength: 4
     maxLength: 4
   payment:
-    $ref: CardPayment.yaml
+    oneOf:
+      - $ref: CardPayment-AR.yaml
+      - $ref: CardPayment-BR.yaml

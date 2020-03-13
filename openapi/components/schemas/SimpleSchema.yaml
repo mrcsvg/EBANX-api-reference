@@ -1,0 +1,11 @@
+type: object
+title: seila 🇧🇷
+required:
+  - field
+properties:
+  field:
+    description: This is a field
+    type: string
+    minLength: 14
+    maxLength: 19
+    example: 4111111111111111

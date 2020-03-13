@@ -1,0 +1,157 @@
+type: object
+title: Brazil 🇧🇷
+required:
+  - merchant_payment_code
+  - amount_total
+  - currency_code
+  - name
+  - email
+  - birth_date
+  - document
+  - address
+  - street_number
+  - city
+  - state
+  - zipcode
+  - country
+  - phone_number
+  - payment_type_code
+  - instalments
+  - card
+  - card_number
+properties:
+  merchant_payment_code:
+    type: string
+    description: |
+      The payment hash Merchant Payment Code (unique merchant ID).
+    minLength: 1
+    maxLength: 40
+    example: 0x0W05D2-T01
+  amount_total:
+    type: number
+    description: The amount in the specified currency (currency_code)
+    example: 1000.99
+  currency_code:
+    type: string
+    description: |
+      Three-letter code of the payment currency (ISO 4217). Supported currencies:
+    enum:
+      - BRL
+      - EUR
+      - MXN
+      - PEN
+      - USD
+      - CLP
+      - COP
+      - ARS
+      - BOB
+    minLength: 3
+    maxLength: 3
+    example: BRL
+  name:
+    type: string
+    description: Customer name.
+    example: James Bond
+    minLength: 1
+    maxLength: 100
+  email:
+    type: string
+    description: Customer email address.
+    example: james.bond@ebanx.com
+    minLength: 5
+    maxLength: 100
+  birth_date:
+    type: string
+    description: Customer birth date in DD/MM/YYYY format
+    example: 12/04/1979
+    minLength: 10
+    maxLength: 10
+  document:   #TODO Criar YAML ref
+    type: string
+    description: |
+      Customers document number.
+      - **Brazil:** requires a valid CPF (natural person taxpayer ID) or CNPJ (business taxpayer ID).
+    example: 000.000.001-91
+    maxLength: 32
+  address:
+    type: string
+    description: | 
+      Customer address (street name).
+    example: Rua João Negrão
+  street_number:
+    type: string
+    description: |
+      Customer street number.
+    example: 123
+  city:
+    type: string
+    description: | 
+      Customer city.
+    example: Curitiba
+  state:
+    type: string
+    description: |
+      Customer state/region/province.
+    enum:
+      - AC
+      - AL
+      - AP
+      - AM
+      - BA
+      - CE
+      - DF
+      - ES
+      - GO
+      - MA
+      - MT
+      - MS
+      - MG
+      - PA
+      - PB
+      - PR
+      - PE
+      - PI
+      - RJ
+      - RN
+      - RS
+      - RO
+      - RR
+      - SC
+      - SP
+      - SE
+      - TO
+    example: PR
+  zipcode:
+    type: string
+    description: |
+      Customer’s zipcode.
+    minLength: 8
+    maxLength: 8
+    example: 03638010
+  country:
+    type: string
+    description: |
+      The two-letter country code for the customer country. The available codes/countries are:
+      - **BR:** Brazil.
+    enum:
+      - BR
+    example: BR
+  phone_number:
+    type: string
+    description: Customer phone number.
+    minLength: 10
+    maxLength: 15
+    example: 11989989999
+  payment_type_code:
+    type: string
+    description: | 
+      The code of the payment method. To Debit card it is going to be ``debitcard``
+    example: debitcard
+  instalments:
+    type: string
+    description: |
+      The number of instalments of the payment (from 1 to 12, depending on your contract and the country).
+      **- Brazil:** 1 to 12 (depending on your contract).
+    example: 1
+  card:
+    $ref: Card.yaml

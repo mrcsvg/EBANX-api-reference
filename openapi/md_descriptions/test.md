@@ -36,3 +36,6 @@ There are two major scenarios to process payments using the **3DS 2**.
  Authentication without challenge and failed authorization | ❗️Not ready 
  Authentication with challenge and sucessful authorization | ❗️Not ready 
  Authentication with challenge and failed authorization | ❗️Not ready 
+
+
+
