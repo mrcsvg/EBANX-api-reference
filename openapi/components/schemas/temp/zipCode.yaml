@@ -1,0 +1,22 @@
+type: object
+title: ws/zipCode
+description: |
+  The zip code operation is a server-to-server HTTP POST used by the merchant website to query EBANX for the address for a given zip code.
+  **Only available for Brazil**
+required:
+  - integration_key
+  - zipcode
+properties:
+  integration_key:
+    type: string
+    description: |
+      Your unique and secret integration key.
+    maxLength: 100
+    example: "your_test_integration_key"
+  zipcode:
+    type: string
+    description: |
+      A valid Brazilian zip code.
+    minLength: 8
+    maxLength: 8
+    example: "61919-230"

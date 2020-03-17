@@ -1,0 +1,41 @@
+type: object
+title: ws/refundOrCancel
+description: |
+  The refund or cancel operation is a server-to-server operation to cancel payments or create payments refunds.
+  When the refundOrCancel operation is requested, the following will occur according to the payment status:
+  - Open (OP) or Pending (PE) – the payment will be cancelled (status changes to CA), and no refund will be made.
+  - Confirmed (CO) – it will be made a full refund of the payment to the customer.
+required:
+  - integration_key
+  - operation
+  - hash
+properties:
+  integration_key:
+    type: string
+    description: |
+      Your unique and secret integration key.
+    maxLength: 100
+    example: "your_test_integration_key"
+  hash:
+    type: string
+    description: |
+      The payment hash (EBANX unique identifier).
+      Required if merchant_payment_code not provided.
+    minLength: 48
+    maxLength: 48
+    example: "5ad9028b30eb8de099f9fe72b9763283c7cf4d35b6430221"
+  description:
+    type: string
+    description: |
+      Description of the refund reason.
+      **Required for request.**
+    minLength: 1
+    maxLength: 1500
+    example: "Order did not arrive"
+  merchant_refund_code:
+    type: string
+    description: |
+      The ID of the refund on the merchant system.
+    minLength: 1
+    maxLength: 20
+    example: 787653
