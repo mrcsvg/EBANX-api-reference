@@ -1,0 +1,112 @@
+type: object
+title: Chile_WebPay
+description: "A JSON object that represents the payment."
+required:
+  - name
+  - email
+  - currency_code
+  - amount_total
+  - merchant_payment_code
+  - payment_type_code
+  - document
+  - zipcode
+  - address
+  - street_number
+  - city
+  - state
+  - country
+  - phone_number
+properties:
+  name:
+    type: string
+    description: "Customer name."
+    minLength: 1
+    maxLength: 100
+    example: "José Silva"
+  email:
+    type: string
+    description: "Customer email address."
+    minLength: 5
+    maxLength: 100
+    example: "josechile@example.com"
+  document:
+    type: string
+    description: |
+      Customer's document number.
+      - **Chile:** Customer RUT (taxpayer identification number). It must be a valid one.
+    maxLength: 32
+    example: "9882884-2"
+  address:
+    type: string
+    description: "Customer address (street name)."
+    example: "Rua E"
+    minLength: 1
+    maxLength: 100
+  street_number:
+    type: string
+    description: "Customer street number."
+    example: "1040"
+    minLength: 1
+    maxLength: 30
+  city:
+    type: string
+    description: "Customer city."
+    example: "Antofagasta"
+    minLength: 1
+    maxLength: 80
+  state:
+    type: string
+    description: |
+      Customer state/region/province.
+    example: "Antofagasta"
+  zipcode:
+    type: string
+    description: |
+      Customer's zipcode.
+    minLength: 8
+    maxLength: 8
+    example: "61919-230"
+  country:
+    type: string
+    description: |
+      The two-letter country code for the customer country. The available codes/countries are:
+      - **CL:** Chile.
+    enum:
+      - CL
+    example: CL
+  phone_number:
+    type: string
+    description: "Customer phone number. It is required for all countries."
+    minLength: 10
+    maxLength: 15
+    example: 0405777687
+  payment_type_code:
+    type: string
+    description: |
+      Value must be webpay for Webpay payments.
+    example: "webpay"
+    enum: 
+      - webpay
+  merchant_payment_code:
+    type: string
+    description: "The payment hash Merchant Payment Code (unique merchant ID)."
+    example: "0564b3c5ae0"
+  currency_code:
+    type: string
+    description: |
+      Three-letter code of the payment currency. 
+      Supported currencies: 
+      - CLP
+      - EUR
+      - USD
+    enum:
+      - CLP
+      - EUR
+      - USD
+    example: "CLP"
+    minLength: 3
+    maxLength: 3
+  amount_total:
+    type: number
+    description: "The amount in the specified currency (currency_code)."
+    example: "100"

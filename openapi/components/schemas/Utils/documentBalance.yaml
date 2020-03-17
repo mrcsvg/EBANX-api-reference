@@ -1,0 +1,32 @@
+type: object 
+title: ws/documentBalance
+description: |
+  This is a server-to-server HTTP POST used by the merchant to check the customer’s balance in USD. 
+  According to Brazil’s Federal law, brazilian customers can spend up to 3000 USD per month in 
+  internacional transactions. 
+  This operation retrieves the amount available that the customer still has, and the amount used within 
+  the current month.
+required:
+  - integration_key
+  - document
+properties:
+  integration_key:
+    type: string
+    description: |
+      Your unique and secret integration key.
+    maxLength: 100
+    example: "your_test_integration_key"
+  document:
+    type: string
+    description: |
+      The customer’s CPF document or the company’s CNPJ.
+    minLength: 11
+    maxLength: 11
+    example: "68362585289"
+  currency_code: 
+    type: string
+    description: |
+      The code of the currency (ISO 4217 3 letter code).
+    minLength: 3
+    maxLength: 3
+    example: "USD"

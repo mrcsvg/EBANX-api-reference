@@ -1,0 +1,29 @@
+type: object 
+title: ws/exchange
+description: |
+  The exchange operation is a server-to-server HTTP POST used by the merchant website to query EBANX for the current exchange rate for a given currency.
+required:
+  - integration_key
+  - currency_code
+  - currency_base_code
+properties:
+  integration_key:
+    type: string
+    description: |
+      Your unique and secret integration key.
+    maxLength: 100
+    example: "your_test_integration_key"
+  currency_code: 
+    type: string
+    description: |
+      The code of the currency (ISO 4217 3 letter code).
+    minLength: 3
+    maxLength: 3
+    example: "USD"
+  currency_base_code: 
+    type: string
+    description: |
+      The code of the base (target) currency (ISO 4217 3 letter code).
+    minLength: 3
+    maxLength: 3
+    example: "BRL"

@@ -1,0 +1,22 @@
+type: object
+title: ws/print
+description: |
+  You can use the print method to show a printable slip for the supported (cash) payment methods.
+required:
+  - hash
+properties:
+  hash:
+    type: string
+    description: |
+      The payment hash (EBANX unique identifier).
+    minLength: 48
+    maxLength: 48
+    example: "5476099e890c06ca6f02cae9da1b1faaf3c5929439076cb9"
+  format:
+    type: string
+    description: |
+      The format that Baloto(COL), Boleto(BRA) or OXXO(MEX) cash payments can be printed. 
+      The following formats are accepted: pdf and html(default).
+    minLength: 3
+    maxLength: 3
+    example: "pdf"

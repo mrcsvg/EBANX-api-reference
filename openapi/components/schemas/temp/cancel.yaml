@@ -1,0 +1,23 @@
+type: object 
+title: ws/cancel
+description: |
+  The cancel operation is a server-to-server operation that cancels payments.
+  You can cancel one payment if, and only if, its status is open (OP) or pending (PE). 
+  It’s important to know that confirmed payments (CO) cannot be cancelled.
+required:
+  - integration_key
+  - hash
+properties:
+  integration_key:
+    type: string
+    description: |
+      Your unique and secret integration key.
+    maxLength: 100
+    example: "your_test_integration_key"
+  hash:
+    type: string
+    description: |
+      The payment hash (EBANX unique identifier).
+    minLength: 48
+    maxLength: 48
+    example: "5476099e890c06ca6f02cae9da1b1faaf3c5929439076cb9"

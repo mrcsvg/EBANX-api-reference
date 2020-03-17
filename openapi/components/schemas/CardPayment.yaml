@@ -25,5 +25,8 @@ properties:
     maxLength: 4
   payment:
     oneOf:
-      - $ref: CardPayment-AR.yaml
-      - $ref: CardPayment-BR.yaml
+      - $ref: ./Transactional/DirectAPI/AR/CreditCard.yaml
+      - $ref: ./Transactional/DirectAPI/BR/CreditCard.yaml
+      - $ref: ./Transactional/DirectAPI/CO/CreditCard.yaml
+      - $ref: ./Transactional/DirectAPI/MX/CreditCard.yaml
+      - $ref: ./Transactional/DirectAPI/PE/CreditCard.yaml

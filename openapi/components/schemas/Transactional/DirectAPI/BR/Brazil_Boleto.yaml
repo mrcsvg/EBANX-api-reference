@@ -1,0 +1,152 @@
+type: object
+title: Brazil_Boleto
+description: "A JSON object that represents the payment."
+required:
+  - name
+  - email
+  - document
+  - zipcode
+  - address
+  - street_number
+  - city
+  - state
+  - phone_number
+  - country
+  - payment_type_code
+  - merchant_payment_code
+  - currency_code
+  - amount_total
+properties:
+  name:
+    type: string
+    description: "Customer name."
+    minLength: 1
+    maxLength: 100
+    example: "José Silva"
+  email:
+    type: string
+    description: "Customer email address."
+    minLength: 5
+    maxLength: 100
+    example: "jose@example.com"
+  document:
+    type: string
+    description: |
+      Customer's document number.
+      - **Brazil:** requires a valid CPF (natural person taxpayer ID) or CNPJ (business taxpayer ID).
+    maxLength: 32
+    example: "853.513.468-93"
+  address:
+    type: string
+    description: "Customer address (street name)."
+    example: "Rua E"
+    minLength: 1
+    maxLength: 100
+  street_number:
+    type: string
+    description: "Customer street number."
+    example: "1040"
+    minLength: 1
+    maxLength: 30
+  city:
+    type: string
+    description: "Customer city."
+    example: "Maracanau"
+    minLength: 1
+    maxLength: 80
+  state:
+    type: string
+    description: |
+      Customer state/region/province.
+    enum:
+      - AC
+      - AL
+      - AP
+      - AM
+      - BA
+      - CE
+      - DF
+      - ES
+      - GO
+      - MA
+      - MT
+      - MS
+      - MG
+      - PA
+      - PB
+      - PR
+      - PE
+      - PI
+      - RJ
+      - RN
+      - RS
+      - RO
+      - RR
+      - SC
+      - SP
+      - SE
+      - TO
+    example: CE
+  zipcode:
+    type: string
+    description: |
+      Customer's zipcode.
+    minLength: 8
+    maxLength: 8
+    example: "61919-230"
+  country:
+    type: string
+    description: |
+      The two-letter country code for the customer country. The available codes/countries are:
+      - **BR:** Brazil.
+    enum:
+      - BR
+    example: BR
+  phone_number:
+    type: string
+    description: "Customer phone number. It is required for all countries."
+    minLength: 10
+    maxLength: 15
+    example: 8522847035
+  payment_type_code:
+    type: string
+    description: |
+      Value must be boleto for Boleto Bancário payments.
+    example: "boleto"
+    enum: 
+      - boleto
+  due_date:
+    type: string
+    description: |
+      The due date for payments slips. The boleto expiry date in the format dd/mm/yyyy. 
+      It can be more than three days only when payment.currency is BRL (Brazilian Real), 
+      and your merchant account has this feature enabled. 
+      The due date is based on the local time of the country that the payment is generated. 
+      Please note the boleto may not be cancelled right after the expire date(3 days for USD) in order to 
+      have a proper compensation period specially when the boleto is paid close to a public holiday. 
+      Also, if the expire date is on holiday or weekend, we need to always consider the next business day.
+    minLength: 10
+    maxLength: 10
+  merchant_payment_code:
+    type: string
+    description: "The payment hash Merchant Payment Code (unique merchant ID)."
+    example: "a92253f29db"
+  currency_code:
+    type: string
+    description: |
+      Three-letter code of the payment currency. 
+      Supported currencies: 
+      - BRL 
+      - EUR 
+      - USD
+    enum:
+      - BRL
+      - EUR
+      - USD
+    example: "BRL"
+    minLength: 3
+    maxLength: 3
+  amount_total:
+    type: number
+    description: "The amount in the specified currency (currency_code)."
+    example: "100"

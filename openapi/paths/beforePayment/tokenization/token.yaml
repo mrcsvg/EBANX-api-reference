@@ -1,12 +1,14 @@
 post:
   tags:
     - Tokenization
-  summary: Create a card token
+  summary: Create a Card token
   description: |
+    The token operation is used to create a token for a given credit card to be used for recurrent payments.   
+    For this method, you will need to wrap the request parameters in a JSON object and send them as the value of a parameter called request_body.  
 
-    This is a description
     > **Note** 
-    > This is a description
+    > To generate the token and check the credit card authenticity, EBANX creates a temporary transaction that will not be captured.
+    > It’s important to know that the tokens expire after 14 months of its last use.
 
   operationId: token
   security:
@@ -17,7 +19,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../../../components/schemas/PaymentResponse.yaml'
+            $ref: '../../../components/schemas/PaymentResponse.yaml'      
           examples:
             OK: #todo mudar
               value : 
@@ -28,9 +30,81 @@ post:
     content:
       application/json:
         schema:
-          oneOf: 
-            - $ref: '../../../components/schemas/RequestBody.yaml'
-            - $ref: '../../../components/schemas/SimpleSchema.yaml'
+          type: object
+          title: seila 🇧🇷
+          required:
+            - integration_key
+            - public_integration_key
+            - payment_type_code
+          properties:
+            integration_key:
+              description: Your unique and secret integration key.
+              type: string
+              minLength: 1
+              maxLength: 100
+            public_integration_key:
+              description: Your unique and secret integration key.
+              type: string
+              minLength: 1
+              maxLength: 100
+            payment_type_code:
+              description: The credit card brand
+              type: string
+              minLength: 32
+              maxLength: 32
+              enum:
+                - amex
+                - aura 
+                - diners 
+                - discover 
+                - elo
+                - hipercard
+                - mastercard
+                - visa
+            token:
+              description: This must be set if you want to inform the token instead of letting EBANX create one.
+              type: string
+              minLength: 32
+              maxLength: 128
+            country:
+              description: |
+                The two-letter country code for the customer country. The available codes are:  
+                **-br:** Brazil.
+                **-co:** Colombia.
+                **-mx:** Mexico.
+                **-pe:** Peru.
+              type: string
+              enum:
+                - br
+                - co
+                - mx
+                - pe
+              minLength: 2
+              maxLength: 2
+
+            creditcard:
+              type: object
+              properties:
+                card_number:
+                  description: Your unique and secret integration key.
+                  type: string
+                  minLength: 1
+                  maxLength: 100
+                card_name:
+                  description: The cardholder name, as written in the credit card.
+                  type: string
+                  minLength: 1
+                  maxLength: 64
+                card_due_date:
+                  description: The credit card valid thru date (formatted as mm/yyyy).
+                  type: string
+                  minLength: 7
+                  maxLength: 7
+                card_cvv:
+                  description: The Card Verification Value (CVV) (3-4 digits).
+                  type: string
+                  minLength: 3
+                  maxLength: 4
     description: Payment body object
     required: true
   x-code-samples:

@@ -1,0 +1,63 @@
+type: object
+title: ws/refund
+description: |
+  This is a server-to-server operation that handles payment refunds. 
+  There are two sub-operations: request and cancel. 
+  The request operation requests a refund. The cancel operation cancels a refund.
+required:
+  - integration_key
+  - operation
+  - hash
+properties:
+  integration_key:
+    type: string
+    description: |
+      Your unique and secret integration key.
+    maxLength: 100
+    example: "your_test_integration_key"
+  operation:
+    type: string
+    description: |
+      The available operations are:
+      request: request a new refund.
+      cancel: cancel a refund.
+    minLength: 6
+    maxLength: 7
+    example: "request"
+  hash:
+    type: string
+    description: |
+      The payment hash (EBANX unique identifier).
+    minLength: 48
+    maxLength: 48
+    example: "5ad9028b30eb8de099f9fe72b9763283c7cf4d35b6430221"
+  amount:
+    type: number
+    description: |
+      The amount to be refunded; expressed in the original payment currency.
+      **Required for request.**
+    example: 100.00
+  description:
+    type: string
+    description: |
+      Description of the refund reason.
+      **Required for request.**
+    minLength: 1
+    maxLength: 500
+    example: "Order did not arrive"
+  merchant_refund_code:
+    type: string
+    description: |
+      The ID of the refund on the merchant system. Unique
+      **Required for request**
+    minLength: 1
+    maxLength: 40
+    example: 787653
+  refund_id:
+    type: integer
+    description: |
+      The ID of the refund to be cancelled.
+      **Required for cancel.**
+    minLength: 20
+    maxLength: 20
+    example: 3784756
