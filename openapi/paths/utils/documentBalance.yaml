@@ -3,11 +3,7 @@ post:
     - Utils
   summary: Document Balance 
   description: |
-
-    This is a description
-    > **Note** 
-    > This is a description
-
+    This is a server-to-server HTTP POST used by the merchant to check the customer’s balance in USD. According to Brazil’s Federal law, brazilian customers can spend up to 3000 USD per month in internacional transactions. This operation retrieves the amount available that the customer still has, and the amount used within the current month.
   operationId: documentBalance
   security:
     - integration_key: []
@@ -22,7 +18,13 @@ post:
             OK: #todo mudar
               value : 
                 {
-                  "say": "hello world"
+                  "status": "SUCCESS",
+                  "document_balance": {
+                    "document": "68362585289",
+                    "balance": "2000.00",
+                    "available": "1000.00",
+                    "currency_code": "USD"
+                  }
                 }           
   requestBody:
     content:
@@ -34,4 +36,4 @@ post:
   x-code-samples:
     - lang: Curl
       source:
-        $ref: ../../code_samples/CURL/direct/post.curl
+        $ref: ../../code_samples/CURL/documentbalance.curl
