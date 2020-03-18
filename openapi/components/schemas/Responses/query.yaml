@@ -210,9 +210,11 @@ properties:
             description: |
               The transaction status code:
 
-              **OK:** The transaction amount was approved.
-              **NOK:** The acquirer did not approved the transaction. The customer must contact the issuer to check for any issue with his credit card.
-              **RETRY:** Something went wrong with the process. You can retry with the same data. We recommend you to try more 3 times on different periods of time (first try, then second try after 2 hours after the first, etc).
+              -   OK: The transaction amount was approved.
+              -   NOK: The acquirer did not approved the transaction. The customer must contact the issuer to check for any issue with his credit card.
+              -   RETRY: Something went wrong with the process. You can retry with the same data. We recommend you to try more 3 times on different periods of time (first try, then second try after 2 hours after the first, etc).
+
+              You can see more of these status [HERE](https://ebxdevelopers2.wpengine.com/guides/understanding-credit-card-transactions/).
           description:
             type: string
             minLength: 1
