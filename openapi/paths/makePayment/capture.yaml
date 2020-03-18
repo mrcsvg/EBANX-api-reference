@@ -28,7 +28,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../../components/schemas/Transactional/Capture.yaml'
+          $ref: '../../components/schemas/Requests/Transactional/Capture.yaml'
     description: Capture something
     required: true
   x-code-samples:

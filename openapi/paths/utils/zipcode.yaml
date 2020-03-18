@@ -28,9 +28,7 @@ post:
     content:
       application/json:
         schema:
-          oneOf: 
-            - $ref: '../../components/schemas/RequestBody.yaml'
-            - $ref: '../../components/schemas/SimpleSchema.yaml'
+          $ref: '../../components/schemas/Utils/zipCode.yaml'
     description: Payment body object
     required: true
   x-code-samples:

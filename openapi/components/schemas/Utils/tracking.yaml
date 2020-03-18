@@ -18,7 +18,7 @@ properties:
     type: string
     description: |
       The customer email.
-    minlength: 5
+    minLength: 5
     maxLength: 100
   order_number:
     type: string
@@ -30,7 +30,7 @@ properties:
       Array of package information.
     required:
       - tracking_code
-    proeprties:
+    properties:
       tracking_code:
         type: string
         description: |
@@ -94,10 +94,10 @@ properties:
             description: |
               Package destination city.
           country:
-            type: string, optional
+            type: string
             description: |
               Package destination country.
-            state:
+          state:
               type: string
               description: |
                 Package destination state.

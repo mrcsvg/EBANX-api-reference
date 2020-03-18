@@ -1,7 +1,7 @@
 post:
   tags:
     - Refund
-  summary: DebitCard 3DS 2
+  summary: Refund
   description: |
 
     This is a description
@@ -28,7 +28,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../../components/schemas/RequestBody.yaml'
+          $ref: '../../components/schemas/Requests/AfterPayment/refund.yaml'
     description: Payment body object
     required: true
   x-code-samples:

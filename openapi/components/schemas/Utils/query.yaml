@@ -27,5 +27,5 @@ properties:
       The payment hash Merchant Payment Code (unique merchant ID).
       Required if hash not provided.
     minLength: 1
-    maxlength: 40
+    maxLength: 40
     example: "126378126"

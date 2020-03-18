@@ -8,8 +8,8 @@ info:
     url: 'http://www.ebanx.com'
   x-logo:
     url: 'https://mrcsvg.github.io/EBANX-api-reference/assets/ebanx-logo-vector.svg'
-  description:
-    $ref: md_descriptions/test.md
+  description: 
+    $ref: md_descriptions/welcome.md
 
 externalDocs:
   description: More documentation about EBANX is also available in our developers portal
@@ -25,6 +25,7 @@ tags:
   - name: Boleto
   - name: Cancel
   - name: Refund
+  - name: Refund of Cancel
 
 servers:
   - url: 'https://api.ebanxpay.com/'
@@ -49,9 +50,9 @@ paths:
   /ws/cancel:
     $ref: paths/afterPayment/cancel.yaml
   /ws/refund:
-    $ref: paths/afterPayment/cancelOrRefund.yaml
-  /ws/refundOrCancel:
     $ref: paths/afterPayment/refund.yaml
+  /ws/refundOrCancel:
+    $ref: paths/afterPayment/refundOrCancel.yaml
 
 
 
@@ -109,6 +110,7 @@ x-tagGroups:
     tags:
       - Cancel
       - Refund
+      - Refund of Cancel
   - name: Utillities
     tags:
       - Utils

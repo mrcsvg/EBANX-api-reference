@@ -1,14 +1,14 @@
 post:
   tags:
-    - Cancel or Refund
-  summary: DebitCard 3DS 2
+    - Refund of Cancel
+  summary: Refund of Cancel
   description: |
 
     This is a description
     > **Note** 
     > This is a description
 
-  operationId: cancelOrRefund
+  operationId: refundOrCancel
   security:
     - integration_key: []
   responses: 
@@ -28,7 +28,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../../components/schemas/RequestBody.yaml'
+          $ref: '../../components/schemas/Requests/AfterPayment/refundOrCancel.yaml'
     description: Payment body object
     required: true
   x-code-samples:

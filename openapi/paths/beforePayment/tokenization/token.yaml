@@ -30,82 +30,9 @@ post:
     content:
       application/json:
         schema:
-          type: object
-          title: seila 🇧🇷
-          required:
-            - integration_key
-            - public_integration_key
-            - payment_type_code
-          properties:
-            integration_key:
-              description: Your unique and secret integration key.
-              type: string
-              minLength: 1
-              maxLength: 100
-            public_integration_key:
-              description: Your unique and secret integration key.
-              type: string
-              minLength: 1
-              maxLength: 100
-            payment_type_code:
-              description: The credit card brand
-              type: string
-              minLength: 32
-              maxLength: 32
-              enum:
-                - amex
-                - aura 
-                - diners 
-                - discover 
-                - elo
-                - hipercard
-                - mastercard
-                - visa
-            token:
-              description: This must be set if you want to inform the token instead of letting EBANX create one.
-              type: string
-              minLength: 32
-              maxLength: 128
-            country:
-              description: |
-                The two-letter country code for the customer country. The available codes are:  
-                **-br:** Brazil.
-                **-co:** Colombia.
-                **-mx:** Mexico.
-                **-pe:** Peru.
-              type: string
-              enum:
-                - br
-                - co
-                - mx
-                - pe
-              minLength: 2
-              maxLength: 2
+          $ref: '../../../components/schemas/Requests/tokenization/token.yaml'
+    description: Capture something
 
-            creditcard:
-              type: object
-              properties:
-                card_number:
-                  description: Your unique and secret integration key.
-                  type: string
-                  minLength: 1
-                  maxLength: 100
-                card_name:
-                  description: The cardholder name, as written in the credit card.
-                  type: string
-                  minLength: 1
-                  maxLength: 64
-                card_due_date:
-                  description: The credit card valid thru date (formatted as mm/yyyy).
-                  type: string
-                  minLength: 7
-                  maxLength: 7
-                card_cvv:
-                  description: The Card Verification Value (CVV) (3-4 digits).
-                  type: string
-                  minLength: 3
-                  maxLength: 4
-    description: Payment body object
     required: true
   x-code-samples:
     - lang: Curl
