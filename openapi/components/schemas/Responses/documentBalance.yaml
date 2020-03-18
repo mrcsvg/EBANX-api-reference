@@ -1,0 +1,33 @@
+type: object
+properties:
+  status:
+    type: string
+    description: |
+      The status of the the request (SUCCESS or ERROR).
+    minLength: 5
+    maxLength: 7
+  document_balance:
+    type: object
+    description: |
+      JSON object with the Document Balance data. 
+    properties:
+      document:
+        type: string
+        minLength: 14
+        maxLength: 14
+        description: |
+          The customer’s CPF or the company’s CNPJ.
+      balance:
+        type: number
+        description: |
+          The customer’s spent amount in the current month.
+      available:
+        type: number
+        description: |
+          The customer’s available amount the can still be spent in the current month.
+      currency_code:
+        type: string
+        minLength: 3
+        maxLength: 3
+        description: |
+          The code of the currency (ISO 4217 3 letter code).

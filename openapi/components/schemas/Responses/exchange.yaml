@@ -1,0 +1,33 @@
+type: object
+properties:
+  status:
+    type: string
+    description: |
+      The status of the the request (SUCCESS or ERROR).
+    minLength: 5
+    maxLength: 7
+  currency_rate:
+    type: object
+    properties:
+      code:
+        type: string
+        minLength: 3
+        maxLength: 3
+        description: |
+          The code of the currency (ISO 4217 three-letter code).
+      currency_base_code:
+        type: string
+        minLength: 3
+        maxLength: 3
+        description: |
+          The code of the base (target) currency (ISO 4217 3 letter code).
+      name:
+        type: string
+        minLength: 1
+        maxLength: 40
+        description: |
+          The name of the currency.
+      rate:
+        type: number
+        description: |
+          The current exchange rate.

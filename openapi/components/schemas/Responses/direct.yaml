@@ -1,0 +1,365 @@
+type: object
+description: |
+  JSON object with the payment data. 
+  The response parameters will vary depending on the chosen payment method.
+properties:
+  status:
+    type: string
+    description: |
+      The status of the the request (SUCCESS or ERROR).
+    minLength: 5
+    maxLength: 7
+  payment:
+    type: object
+    description: |
+      A JSON object that represents the payment.
+    properties:
+      hash:
+        type: string 
+        minLength: 48
+        maxLength: 48
+        description: |
+          The payment hash (EBANX unique identifier).
+      pin:
+        type: string
+        minLength: 41
+        maxLength: 41
+        description: |
+          The payment PIN (EBANX and Customer unique identifier).
+      country:
+        type: string
+        minLength: 2
+        maxLength: 2
+        description: |
+          The country of the payment.
+      merchant_payment_code:
+        type: string
+        minLength: 1
+        maxLength: 40
+        description: |
+          The payment hash Merchant Payment Code (unique merchant ID).
+      order_number:
+        minLength: 1
+        maxLength: 40
+        description: |
+          The order number, optional identifier set by the merchant. 
+          You can have multiple payments with the same order number.
+      status:
+        type: string
+        minLength: 2
+        maxLength: 2
+        description: |
+          The payment status. The following statuses are available:
+
+          OP: the customer has not yet filled the payment details on the EBANX Checkout. It can change either to CA (time out) or PE.
+          PE: the payment is pending confirmation. It can change either to CA or CO.
+          CO: the payment is confirmed (paid).
+          CA: the payment is cancelled.
+      status_date:
+        type: string
+        minLength: 19
+        maxLength: 19
+        description: |
+          The date and hour of the last status change.
+      open_date:
+        type: string
+        minLength: 19
+        maxLength: 19
+        description: |
+          The date and hour of when the payment was created.
+      confirm_date:
+        type: string
+        minLength: 19
+        maxLength: 19
+        description: |
+          The date and hour of when the payment was confirmed.
+      transfer_date:
+        type: string
+        minLength: 19
+        maxLength: 19
+        description: |
+          The date and hour of when the payment was settled.
+      amount_br:
+        type: number
+        description: |
+          The amount in local currency.
+      amount_iof:
+        type: number
+        description: |
+          The tax amount in local currency (varies between countries).
+      amount_ext:
+        type: number
+        description: |
+          The amount in the original currency.
+      currency_rate:
+        type: number
+        description: |
+          The exchange rate used in the payment.
+      currency_ext:
+        type: string
+        minLength: 3
+        maxLength: 3
+        description: | 
+          ISO 4217 three letter code of the original currency.
+      due_date:
+        type: string
+        minLength: 10
+        maxLength: 10
+        description: |
+          Expiry date of the payment (not applicable to all payment methods).
+          Format: dd/mm/yyyy
+      instalments:
+        type: integer
+        description: |
+          Number of instalments for the payment, default value is 1.
+
+      payment_type_code:
+        type: string
+        minLength: 32
+        maxLength: 32
+        description: |
+          The code of the payment method. The supported codes are:
+
+          amex: American Express credit card (Brazil, Mexico, Colombia).
+          baloto: Baloto (Colombia).
+          bancodobrasil: Banco do Brasil online debit (Brazil).
+          banrisul: Banrisul online debit (Brazil).
+          banktransfer: Bank transfer (Brazil).
+          boleto: Boleto bancário (Brazil).
+          bradesco: Bradesco online debit (Brazil).
+          carnet: CARNET credit card (Mexico).
+          credimas: Cabal credit card (Argentina).
+          cupon: Cupon de Pagos (Argentina).
+          diners: Diners credit card (Brazil, Colombia).
+          discover: Discover credit card (Brazil).
+          ebanxaccount: EBANX Account (Brazil).
+          eft: Bank Transfer (Colombia).
+          elo: Elo credit card (Brazil).
+          hipercard: Hipercard credit card (Brazil).
+          itau: Itaú online debit (Brazil).
+          mastercard: MasterCard credit card (Brazil, Mexico, Colombia).
+          multicaja: Multicaja (Chile).
+          naranja: Naranja (Argentina).
+          oxxo: OXXO (Mexico).
+          pagoefectivo: PagoEfectivo (Peru).
+          pagofacil: PagoFacil (Argentina).
+          pagosnet: PagosNet (Bolivia).
+          rapipago: RapiPago (Argentina).
+          safetypay: SafetyPay (Peru, Ecuador, Checkout only).
+          safetypay-cash: SafetyPay Cash (Peru, Ecuador).
+          safetypay-online: SafetyPay Online (Peru, Ecuador).
+          sencillito: Sencillito (Chile).
+          servipag: Servipag (Chile).
+          spei: SPEI bank transfer method (Mexico).
+          visa: Visa credit card (Brazil, Mexico, Colombia).
+          webpay: Webpay (Chile).
+        enum:
+          - amex
+          - baloto
+          - bancodobrasil
+          - banrisul
+          - banktransfer
+          - boleto
+          - bradesco
+          - carnet
+          - credimas
+          - cupon
+          - diners
+          - discover
+          - ebanxaccount
+          - eft
+          - elo
+          - hipercard
+          - itau
+          - mastercard
+          - multicaja
+          - naranja
+          - oxxo
+          - pagoefectivo
+          - pagofacil
+          - pagosnet
+          - rapipago
+          - safetypay
+          - safetypay-cash
+          - safetypay-online
+          - sencillito
+          - servipag
+          - spei
+          - visa
+          - webpay
+      details:
+        type: object
+        description: |
+          A JSON object that represents the payment details.
+        properties:
+          billing_descriptor:
+            type: string
+            description: |
+              The billing descriptor of the payment.
+      transaction_status:
+        type: object
+        description: |
+          A JSON object that represents the payment credit card transaction.
+        properties:
+          acquirer:
+            type: string
+            minLength: 32
+            maxLength: 32
+            description: |
+              The acquirer that processed the transaction.
+          code:
+            type: string
+            minLength: 2
+            maxLength: 7
+            description: |
+              The transaction status code:
+
+              **OK:** The transaction amount was approved.
+              **NOK:** The acquirer did not approved the transaction. The customer must contact the issuer to check for any issue with his credit card.
+              **RETRY:** Something went wrong with the process. You can retry with the same data. We recommend you to try more 3 times on different periods of time (first try, then second try after 2 hours after the first, etc).
+          description:
+            type: string
+            minLength: 1
+            maxLength: 500
+            description: |
+              The description for the status code, which is returned from the acquirer.
+          authcode:
+            type: string
+            minLength: 40
+            maxLength: 40
+            description: |
+              Transaction authentication code in the acquirer.
+      pre_approved:
+        type: boolean
+        description: |
+          Flag that shows if a payment is pre-approved by the credit card acquirer.
+      capture_available:
+        type: boolean
+        description: |
+          Flag that shows if a payment is ready to be captured. Applies only to credit cards when auto_capture is set to false. Some remarks on this attribute:
+
+          A payment can only be captured if pre_approved value is true, which means that the payment has been pre approved by the credit card acquirer. Before capture, an authorized payment has status as PE (pending). After the capture, the status changes to CO (confirmed). A payment can only be captured if the status is PE (pending). *Payments must be captured in 4 (four) days, otherwise they are automatically cancelled.
+          NOTE: It can be changed up to 5 (five) days.
+      redirect_url:
+        type: string
+        description: |
+          The URL the customer should be redirected to. Applies to certain payment methods using the Direct API.
+
+      pay_with_balance_url:
+        type: string
+        description: |
+          If the customer has an EBANX Account profile and it has balance enough to pay for the created boleto, the response will contain this parameter responsible for redirecting the customer to his EBANX Account page so he can pay the boleto with his available balance.
+
+      boleto_url:
+        type: string
+        description: |
+          The boleto URL.
+
+      boleto_barcode:
+        type: string
+        minLength: 47
+        maxLength: 47
+        description: | 
+          The boleto barcode number. (Boleto)
+      cip_url:
+        type: string
+        description: | 
+          The CIP URL. (PagoEfectivo)
+      cip_code:
+        type: string
+        minLength: 12
+        maxLength: 12
+        description: | 
+          The CIP code. (PagoEfectivo)
+      refunds:
+        type: object
+        description: |
+          An array of objects that represent a refund linked to this payment. 
+          This node will only be present if a refund was issued.
+        properties:
+          id:
+            type: integer
+            description: |
+              The ID of the refund on EBANX.
+          merchant_refund_code:
+            type: string
+            minLength: 1
+            maxLength: 20
+            description: | 
+              The ID of the refund on the merchant system (optional).
+          status:
+            type: string
+            minLength: 2
+            maxLength: 2
+            description: | 
+              The status of the refund:
+
+              **RE (Requested):** The refund has been requested and is waiting to be processed. It can be cancelled while it has this status.
+              **PE (Pending):** The refund is being processed. It cannot be cancelled anymore.
+              **CO (Confirmed):** The refund was processed and the money was sent back to the customer.
+              **CA (Cancelled):** The refund was cancelled.
+          request_date:
+            type: string
+            minLength: 19
+            maxLength: 19
+            description: | 
+              The date and hour when the refund was created. UTC Date.
+          pending_date:
+            type: string
+            minLength: 19
+            maxLength: 19
+            description: |
+              The date and hour when the customer data was received. UTC Date.
+          confirm_date:
+            type: string
+            minLength: 19
+            maxLength: 19
+            description: | 
+              The date and hour when the money was transferred to the customer. UTC Date.
+          amount_ext:
+            type: number
+            description: |
+              The refunded amount in the original currency.
+          description:
+            type: string
+            minLength: 1
+            maxLength: 1500
+            description: | 
+              Description of the refund reason.
+      chargeback:
+        type: object
+        description: |
+          A JSON object that represents a chargeback linked to this payment. 
+          This node will only be present if a chargeback was issued.
+        properties:
+          create_date:
+            type: string
+            minLength: 19
+            maxLength: 19
+            description: | 
+              The date and hour when the chargeback was imported into the system. UTC Date.
+
+          chargeback_date:
+            type: string
+            minLength: 19
+            maxLength: 19
+            description: | 
+              The date and hour when the chargeback was created by the acquirer on behalf of the customer. UTC Date.
+          description:
+            type: string
+            minLength: 1
+            maxLength: 1500
+            description: | 
+              Description of the chargeback.
+      chargeback_credit:
+        type: boolean
+        description: |
+          Flag that shows if a chargeback credit was issued.
+      clabe_account:
+        type: string
+        descfiption: |
+          (Only for SPEI payments) The customer’s CLABE account.
+      clabe_reference:
+        type: string
+        description: |
+          (Only for SPEI payments) The reference for the current payment.

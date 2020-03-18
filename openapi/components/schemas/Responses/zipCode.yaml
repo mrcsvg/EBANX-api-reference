@@ -1,0 +1,29 @@
+type: object
+properties:
+  status:
+    type: string
+    description: |
+      The status of the the request (SUCCESS or ERROR).
+    minLength: 5
+    maxLength: 7
+  zipcode:
+    type: object
+    properties:
+      state:
+        type: string
+        minLength: 2
+        maxLength: 2
+        description: |
+          The state code (two-letter code).
+      city:
+        type: string
+        minLength: 1
+        maxLength: 128
+        description: |
+          The city name.
+      name:
+        type: string
+        minLength: 1
+        maxLength: 256
+        description: |
+          The street name. It may be empty because the zipcode may not have been assigned to a specific street.

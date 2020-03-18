@@ -1,0 +1,22 @@
+type: object
+properties:
+  status:
+    type: string
+    description: |
+      The status of the the request (SUCCESS or ERROR).
+    minLength: 5
+    maxLength: 7
+  code:
+    type: string
+    description: |
+      The code of the bank to use in parameter **eft_code**. 
+      If payment is for Brazil, the code must go in **payment_type_code** parameter.
+    minLength: 0
+    maxLength: 32
+  name:
+    type: string
+    description: |
+      The name of the bank related to the code. 
+      You can use this to show the name of the payment method for the customer.
+    minLength: 0
+    maxLength: 32
