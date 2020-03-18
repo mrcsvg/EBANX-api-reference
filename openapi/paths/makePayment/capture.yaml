@@ -28,10 +28,8 @@ post:
     content:
       application/json:
         schema:
-          oneOf: 
-            - $ref: '../../components/schemas/RequestBody.yaml'
-            - $ref: '../../components/schemas/SimpleSchema.yaml'
-    description: Payment body object
+          $ref: '../../components/schemas/Requests/Transactional/Capture.yaml'
+    description: Capture something
     required: true
   x-code-samples:
     - lang: Curl

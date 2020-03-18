@@ -1,12 +1,14 @@
 post:
   tags:
     - Tokenization
-  summary: Create a card token
+  summary: Create a Card token
   description: |
+    The token operation is used to create a token for a given credit card to be used for recurrent payments.   
+    For this method, you will need to wrap the request parameters in a JSON object and send them as the value of a parameter called request_body.  
 
-    This is a description
     > **Note** 
-    > This is a description
+    > To generate the token and check the credit card authenticity, EBANX creates a temporary transaction that will not be captured.
+    > It’s important to know that the tokens expire after 14 months of its last use.
 
   operationId: token
   security:
@@ -17,7 +19,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../../../components/schemas/PaymentResponse.yaml'
+            $ref: '../../../components/schemas/PaymentResponse.yaml'      
           examples:
             OK: #todo mudar
               value : 
@@ -28,10 +30,9 @@ post:
     content:
       application/json:
         schema:
-          oneOf: 
-            - $ref: '../../../components/schemas/RequestBody.yaml'
-            - $ref: '../../../components/schemas/SimpleSchema.yaml'
-    description: Payment body object
+          $ref: '../../../components/schemas/Requests/tokenization/token.yaml'
+    description: Capture something
+
     required: true
   x-code-samples:
     - lang: Curl

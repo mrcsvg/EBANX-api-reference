@@ -1,0 +1,67 @@
+type: object
+title: Peru_PagoEffectivo
+description: "A JSON object that represents the payment."
+required:
+  - name
+  - email
+  - phone_number
+  - country
+  - payment_type_code
+  - merchant_payment_code
+  - currency_code
+  - amount_total
+properties:
+  name:
+    type: string
+    description: "Customer name."
+    minLength: 1
+    maxLength: 100
+    example: "José Silva"
+  email:
+    type: string
+    description: "Customer email address."
+    minLength: 5
+    maxLength: 100
+    example: "joseperu@example.com"
+  country:
+    type: string
+    description: |
+      The two-letter country code for the customer country. The available codes/countries are:
+      - **PE:** Peru.
+    enum:
+      - PE
+    example: PE
+  phone_number:
+    type: string
+    description: "Customer phone number. It is required for all countries."
+    minLength: 10
+    maxLength: 15
+    example: 0405777687
+  payment_type_code:
+    type: string
+    description: |
+      Value must be pagoefectivo for PagoEfectivo payments.
+    example: "pagoefectivo"
+    enum: 
+      - pagoefectivo
+  merchant_payment_code:
+    type: string
+    description: "The payment hash Merchant Payment Code (unique merchant ID)."
+    example: "1f81b534bac"
+  currency_code:
+    type: string
+    description: |
+      Three-letter code of the payment currency. 
+      Supported currencies: 
+      - PEN
+      - USD
+    enum:
+      - PEN
+      - USD
+    example: "PEN"
+    minLength: 3
+    maxLength: 3
+  amount_total:
+    type: number
+    description: "The amount in the specified currency (currency_code)."
+    example: "100"

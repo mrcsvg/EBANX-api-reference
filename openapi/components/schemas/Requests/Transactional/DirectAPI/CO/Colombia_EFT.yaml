@@ -1,0 +1,86 @@
+type: object
+title: Colombia
+description: "A JSON object that represents the payment."
+required:
+  - name
+  - email
+  - document
+  - phone_number
+  - country
+  - payment_type_code
+  - merchant_payment_code    
+  - currency_code
+  - amount_total
+  - eft_code
+properties:
+  name:
+    type: string
+    description: "Customer name."
+    minLength: 1
+    maxLength: 100
+    example: "José Silva"
+  email:
+    type: string
+    description: "Customer email address."
+    minLength: 5
+    maxLength: 100
+    example: "josecolombia@example.com"
+  document:
+    type: string
+    description: |
+      Customer's document number.
+      - **Colombia:** Customer Cedula de Ciudadania, Cédula de Extrangeria or NIT (taxpayer identification number). It must be a valid one.
+    maxLength: 32
+    example: "4023030074"
+  country:
+    type: string
+    description: |
+      The two-letter country code for the customer country. The available codes/countries are:
+      - **CO:** Colombia.
+    enum:
+      - CO
+    example: CO
+  phone_number:
+    type: string
+    description: "Customer phone number. It is required for all countries."
+    minLength: 10
+    maxLength: 15
+    example: 0405777687
+  payment_type_code:
+    type: string
+    description: |
+      The value must be eft for EFT payments.
+    example: "eft"
+    enum: 
+      - eft
+  eft_code:
+    type: string
+    description: |
+      Code for the customer’s bank. Only required for Colombia payments. 
+      You can retrieve the available codes from ws/getBankList operation.
+    minLength: 0
+    maxLength: 32
+    example: "banco_agrario"
+  merchant_payment_code:
+    type: string
+    description: "The payment hash Merchant Payment Code (unique merchant ID)."
+    example: "2f22633b486"
+  currency_code:
+    type: string
+    description: |
+      Three-letter code of the payment currency. 
+      Supported currencies: 
+      - COP
+      - EUR
+      - USD
+    enum:
+      - COP
+      - EUR
+      - USD
+    example: "COP"
+    minLength: 3
+    maxLength: 3
+  amount_total:
+    type: number
+    description: "The amount in the specified currency (currency_code)."
+    example: 100

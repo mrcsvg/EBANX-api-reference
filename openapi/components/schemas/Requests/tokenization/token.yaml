@@ -1,0 +1,91 @@
+type: object
+title: ws/token
+description: |
+  The token operation is used to create a token for a given credit card to be used for recurrent payments.
+  For this method, you will need to wrap the request parameters in a JSON object and send them as the value of a parameter called request_body.
+  **It’s important to know that the tokens expire after 14 months of its last use.**
+  **Notice: To generate the token and check the credit card authenticity, EBANX creates a temporary transaction that will not be captured.**
+required:
+  - integration_key
+  - public_integration_key
+  - payment_type_code
+  - country
+  - creditcard
+properties:
+  integration_key:
+    type: string
+    description: |
+      Your unique and secret integration key.
+    maxLength: 100
+    example: "your_test_integration_key"
+  public_integration_key:
+    type: string
+    description: |
+      Your unique and public integration key. You can do a token operation using this key instead of the integration key when the request is from the client of your customer (browser, app, etc…). 
+      By doing this, you don’t have to deal directly with the credit card information of your customer.
+    maxLength: 100
+    example: "your_test_public_integration_key"
+  payment_type_code:
+    type: string
+    description: |
+      The credit card scheme: amex, aura, diners, discover, elo, hipercard, mastercard, visa.
+    enum:
+      - amex
+      - aura
+      - diners
+      - discover
+      - elo
+      - hipercard
+      - mastercard
+      - visa
+    minLength: 1
+    maxLength: 32
+  token:
+    type: string
+    description: |
+      This must be set if you want to inform the token instead of letting EBANX create one.
+    minLength: 32
+    maxLength: 128
+  country:
+    type: string
+    description: |
+      The two-letter country code for the customer country. The available codes are:
+      br: Brazil.
+      co: Colombia.
+      mx: Mexico.
+      pe: Peru.
+    minLength: 2
+    maxLength: 2
+  creditcard:
+    type: object
+    description: |
+      The credit card JSON Object
+    required:
+      - card_number
+      - card_name
+      - card_due_date
+      - card_cvv
+    properties:
+      card_number:
+        type: string
+        description: |
+          The credit card number (14-19 digits, must pass the Luhn algorithm).
+        minLength: 14
+        maxLength: 19
+      card_name:
+        type: string
+        description: The cardholder name, as written in the credit card.
+        minLength: 1
+        maxLength: 64
+      card_due_date:
+        type: string
+        description: |
+          The credit card valid thru date (formatted as mm/yyyy).
+        minLength: 7
+        maxLength: 7
+      card_cvv:
+        type: string
+        description: |
+          The Card Verification Value (CVV) (3-4 digits).
+        minLength: 3
+        maxLength: 4

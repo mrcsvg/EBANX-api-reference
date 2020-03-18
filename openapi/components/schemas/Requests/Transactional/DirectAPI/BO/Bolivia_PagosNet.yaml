@@ -1,0 +1,67 @@
+type: object
+title: Bolivia_PagosNet
+description: "A JSON object that represents the payment."
+required:
+  - name
+  - email
+  - phone_number
+  - country
+  - payment_type_code
+  - merchant_payment_code
+  - currency_code
+  - amount_total
+properties:
+  name:
+    type: string
+    description: "Customer name."
+    minLength: 1
+    maxLength: 100
+    example: "José Silva"
+  email:
+    type: string
+    description: "Customer email address."
+    minLength: 5
+    maxLength: 100
+    example: "josebolivia@example.com"
+  country:
+    type: string
+    description: |
+      The two-letter country code for the customer country. The available codes/countries are:
+      - **BO:** Bolivia.
+    enum:
+      - BO
+    example: BO
+  phone_number:
+    type: string
+    description: "Customer phone number. It is required for all countries."
+    minLength: 10
+    maxLength: 15
+    example: 0405777687
+  payment_type_code:
+    type: string
+    description: |
+      Value must be pagosnet for PagosNet payments.
+    example: "pagosnet"
+    enum: 
+      - pagosnet
+  merchant_payment_code:
+    type: string
+    description: "The payment hash Merchant Payment Code (unique merchant ID)."
+    example: "9asdhad1f4096a2"
+  currency_code:
+    type: string
+    description: |
+      Three-letter code of the payment currency. 
+      Supported currencies: 
+      - BOB
+      - USD
+    enum:
+      - BOB
+      - USD
+    example: "BOB"
+    minLength: 3
+    maxLength: 3
+  amount_total:
+    type: number
+    description: "The amount in the specified currency (currency_code)."
+    example: "100"

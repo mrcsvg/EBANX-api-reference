@@ -27,7 +27,7 @@ properties:
     minLength: 1
     maxLength: 40
     example: 0x0W05D2-T01
-  amount_total:
+  amount_total:r
     type: number
     description: The amount in the specified currency (currency_code)
     example: 1000.99
