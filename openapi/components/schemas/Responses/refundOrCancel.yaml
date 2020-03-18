@@ -353,7 +353,7 @@ properties:
           Flag that shows if a chargeback credit was issued.
       clabe_account:
         type: string
-        descfiption: |
+        description: |
           (Only for SPEI payments) The customer’s CLABE account.
       clabe_reference:
         type: string
