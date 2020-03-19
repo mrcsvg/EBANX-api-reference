@@ -24,4 +24,4 @@
 #                $ref: '#/components/examples/PayoutToPayeeWithBankData'                 
 #              Payout to Payee bank account sending bank data with bank details:
 #                $ref: '#/components/examples/PayoutToPayeeWithBankDataAndDetails'                 
-        description: Inventory item to add
+#        description: Inventory item to add
