@@ -1,7 +1,7 @@
 post:
   tags:
     - Payout
-  summary: Commit Payout request
+  summary: Retrieve Payout request
   description: Within this end-point you will be able to **cancel a payout** using payouts's *"external_reference"* or its *"uid"* 
   responses:
     '201':
@@ -14,7 +14,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../../components/schemas/Requests/Payout/commit.yaml'
+          $ref: '../../components/schemas/Requests/Payout/retrieve.yaml'
         examples:
           Search payout:
             value:

@@ -1,7 +1,7 @@
 type: object 
-title: /ws/payout/cancel
+title: /ws/payout/retrieve
 description: |
-  Stub schema for Cancel while i wait for the real one
+  Stub schema for retrieve while i wait for the real one
 required:
   - payee
 properties:

@@ -61,12 +61,12 @@ paths:
     $ref: paths/payout/cancel.yaml
   /ws/payout/commit:
     $ref: paths/payout/commit.yaml
-
-  #/ws/payout/retrieve:
-
-  #/ws/payout/simulate:
-
-  #/ws/payout/search:
+  /ws/payout/retrieve:
+    $ref: paths/payout/retrieve.yaml
+  /ws/payout/simulate:
+    $ref: paths/payout/simulate.yaml
+  /ws/payout/search:
+    $ref: paths/payout/search.yaml
 
   # Check customer balance
   /ws/documentBalance:
