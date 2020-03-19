@@ -1,4 +1,3 @@
 curl -X POST -G 'https://sandbox.ebanxpay.com/ws/documentbalance' \
     -d 'integration_key=your_test_integration_key' \
-    -d 'document=68362585289'
-    -d 'currency_code=USD'
+    -d 'zipcode=61919230'

@@ -3,11 +3,9 @@ post:
     - Utils
   summary: ZipCode
   description: |
+    The zip code operation is a server-to-server HTTP POST used by the merchant website to query EBANX for the address for a given zip code.
 
-    This is a description
-    > **Note** 
-    > This is a description
-
+    **Only available for Brazil**
   operationId: zipCode
   security:
     - integration_key: []
@@ -22,8 +20,13 @@ post:
             OK: #todo mudar
               value : 
                 {
-                  "say": "hello world"
-                }           
+                  "status": "SUCCESS",
+                  "zipcode": {
+                    "state": "CE",
+                    "city": "Maracanau",
+                    "name": "Rua E"
+                  }
+                }             
   requestBody:
     content:
       application/json:
@@ -34,4 +37,4 @@ post:
   x-code-samples:
     - lang: Curl
       source:
-        $ref: ../../code_samples/CURL/direct/post.curl
+        $ref: ../../code_samples/CURL/zipCode.curl
