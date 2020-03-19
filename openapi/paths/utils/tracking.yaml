@@ -4,9 +4,7 @@ post:
   summary: Tracking
   description: |
 
-    This is a description
-    > **Note** 
-    > This is a description
+    The tracking operation is a server-to-server operation that tracks packages.
 
   operationId: tracking
   security:
@@ -22,7 +20,14 @@ post:
             OK: #todo mudar
               value : 
                 {
-                  "say": "hello world"
+                  "status": "SUCCESS",
+                  "result": {
+                    "customer_email": "jose@example.com",
+                    "tracking_code": "cdfg46633bgg67674",
+                    "order_number": "1928374656",
+                    "payment_hash": "5accf7919d84c54aa424de65e9619e8fc48a4c90fd9ab79e",
+                    "status": "Delivered"
+                  }
                 }           
   requestBody:
     content:
@@ -34,4 +39,4 @@ post:
   x-code-samples:
     - lang: Curl
       source:
-        $ref: ../../code_samples/CURL/direct/post.curl
+        $ref: ../../code_samples/CURL/tracking.curl
