@@ -4,9 +4,7 @@ post:
   summary: Get bank list
   description: |
 
-    This is a description
-    > **Note** 
-    > This is a description
+    The “getBankList operation” is a server-to-server HTTP POST used by the merchant website to query EBANX for the list of banks that are available to process with EBANX.
 
   operationId: getBankList
   security:
@@ -21,9 +19,84 @@ post:
           examples:
             OK: #todo mudar
               value : 
-                {
-                  "say": "hello world"
-                }           
+                [
+                  {
+                    "code":"banco_agrario",
+                    "name":"BANCO AGRARIO"
+                  },
+                  {
+                    "code":"banco_av_villas",
+                    "name":"BANCO AV VILLAS"
+                  },
+                  {
+                    "code":"banco_bbva_colombia_s.a.",
+                    "name":"BANCO BBVA COLOMBIA S.A."
+                  },
+                  {
+                    "code":"banco_caja_social",
+                    "name":"BANCO CAJA SOCIAL"
+                  },
+                  {
+                    "code":"banco_colpatria",
+                    "name":"BANCO COLPATRIA"
+                  },
+                  {
+                    "code":"banco_cooperativo_coopcentral",
+                    "name":"BANCO COOPERATIVO COOPCENTRAL"
+                  },
+                  {
+                    "code":"banco_corpbanca_s.a",
+                    "name":"BANCO CORPBANCA S.A"
+                  },
+                  {
+                    "code":"banco_davivienda",
+                    "name":"BANCO DAVIVIENDA"
+                  },
+                  {
+                    "code":"banco_de_bogota",
+                    "name":"BANCO DE BOGOTA"
+                  },
+                  {
+                    "code":"banco_de_occidente",
+                    "name":"BANCO DE OCCIDENTE"
+                  },
+                  {
+                    "code":"banco_falabella_",
+                    "name":"BANCO FALABELLA "
+                  },
+                  {
+                    "code":"banco_gnb_sudameris",
+                    "name":"BANCO GNB SUDAMERIS"
+                  },
+                  {
+                    "code":"banco_pichincha_s.a.",
+                    "name":"BANCO PICHINCHA S.A."
+                  },
+                  {
+                    "code":"banco_popular",
+                    "name":"BANCO POPULAR"
+                  },
+                  {
+                    "code":"banco_procredit",
+                    "name":"BANCO PROCREDIT"
+                  },
+                  {
+                    "code":"bancolombia",
+                    "name":"BANCOLOMBIA"
+                  },
+                  {
+                    "code":"bancoomeva_s.a.",
+                    "name":"BANCOOMEVA S.A."
+                  },
+                  {
+                    "code":"citibank_",
+                    "name":"CITIBANK "
+                  },
+                  {
+                    "code":"helm_bank_s.a.",
+                    "name":"HELM BANK S.A."
+                  }
+                ]        
   requestBody:
     content:
       application/json:
@@ -34,4 +107,4 @@ post:
   x-code-samples:
     - lang: Curl
       source:
-        $ref: ../../code_samples/CURL/direct/post.curl
+        $ref: ../../code_samples/CURL/getBankList.curl
