@@ -19,4 +19,4 @@ properties:
       A valid Brazilian zip code.
     minLength: 8
     maxLength: 8
-    example: "61919-230"
+    example: "61919230"
