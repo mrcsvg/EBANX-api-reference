@@ -1,31 +1,3 @@
-type: object 
-title: ws/query
-description: |
-  The query operation is a server-to-server HTTP POST used by the merchant website to query EBANX for information about a specific payment.
-required:
-  - integration_key
-  - hash
-  - merchant_payment_code
-properties:
-  integration_key:
-    type: string
-    description: |
-      Your unique and secret integration key.
-    maxLength: 100
-    example: "your_test_integration_key"
-  hash:
-    type: string
-    description: |
-      The payment hash (EBANX unique identifier).
-      **Required if merchant_payment_code not provided.**
-    minLength: 48
-    maxLength: 48
-    example: "5478ba283ef8674415082844ee14817376e49bb76aa9d4c7"
-  merchant_payment_code:
-    type: string
-    description: |
-      The payment hash Merchant Payment Code (unique merchant ID).
-      **Required if hash not provided.**
-    minLength: 1
-    maxLength: 40
-    example: "1416854121"
+oneOf:
+  - $ref: ./queryWithHash.yaml
+  - $ref: ./queryWithMerchantPaymentCode.yaml
