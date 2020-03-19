@@ -4,9 +4,7 @@ post:
   summary: Query
   description: |
 
-    This is a description
-    > **Note** 
-    > This is a description
+    The query operation is a server-to-server HTTP POST used by the merchant website to query EBANX for information about a specific payment.
 
   operationId: query
   security:
@@ -22,8 +20,42 @@ post:
             OK: #todo mudar
               value : 
                 {
-                  "say": "hello world"
-                }           
+                  "status":"SUCCESS",
+                  "payment":{
+                    "hash":"54737a76ffc1e5a520b0ed9062213a810ef41dae990184c7",
+                    "merchant_payment_code":"1416854121",
+                    "order_number":null,
+                    "status":"CO",
+                    "status_date":"2014-11-24 16:35:43",
+                    "open_date":"2014-11-24 16:35:34",
+                    "confirm_date":"2014-11-24 16:35:43",
+                    "transfer_date":null,
+                    "amount_br":"352.50",
+                    "amount_ext":"150.00",
+                    "amount_iof":"0.00",
+                    "currency_rate":"2.3500",
+                    "currency_ext":"USD",
+                    "due_date":"2014-12-01",
+                    "instalments":"1",
+                    "payment_type_code":"bradesco",
+                    "pre_approved":false,
+                    "capture_available":null,
+                    "refunds":[
+                      {
+                        "id":"9283",
+                        "merchant_refund_code":null,
+                        "status":"RE",
+                        "request_date":"2014-11-26 17:56:52",
+                        "pending_date":null,
+                        "confirm_date":null,
+                        "cancel_date":null,
+                        "paid_date":null,
+                        "amount_ext":"100.00",
+                        "description":"Order did not arrive"
+                      }
+                    ]
+                  }
+                }        
   requestBody:
     content:
       application/json:
@@ -34,4 +66,4 @@ post:
   x-code-samples:
     - lang: Curl
       source:
-        $ref: ../../code_samples/CURL/direct/post.curl
+        $ref: ../../code_samples/CURL/query.curl
