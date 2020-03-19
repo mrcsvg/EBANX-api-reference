@@ -55,7 +55,7 @@ paths:
     $ref: paths/afterPayment/refundOrCancel.yaml
 
   #Payout
-  /ws/payout/create:
+  #/ws/payout/create:
 
   #/ws/payout/cancel:
 
@@ -125,6 +125,6 @@ x-tagGroups:
   - name: Utillities
     tags:
       - Utils
-  - name: Payout Operations
-    tags:
-      - Payout
+  #- name: Payout Operations
+  #  tags:
+  #    - Payout
