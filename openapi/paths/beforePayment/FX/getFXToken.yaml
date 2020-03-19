@@ -4,9 +4,9 @@ post:
   summary: Get an FX Token
   description: |
 
-    This is a description
-    > **Note** 
-    > This is a description
+    This is a server-to-server operation that retrieves a token to be used in fixed exchange rate operations.
+
+    The integration team should be contacted to enable it upon request to use this feature.
 
   operationId: getFXToken
   security:
@@ -17,23 +17,26 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../../../components/schemas/PaymentResponse.yaml'
+            $ref: '../../../components/schemas/Responses/fxToken.yaml'
           examples:
             OK: #todo mudar
               value : 
                 {
-                  "say": "hello world"
-                }           
+                  "fx_token": "sandbox.20171025.USD.COP",
+                  "currency_rate": 3.6,
+                  "currency_from": "USD",
+                  "currency_to": "COP",
+                  "expire_date": "2017-10-25T10:59:59+00:00",
+                  "new_currency_rate_available_at": "2017-10-25T09:00:00+00:00"
+                }        
   requestBody:
     content:
       application/json:
         schema:
-          oneOf: 
-            - $ref: '../../../components/schemas/RequestBody.yaml'
-            - $ref: '../../../components/schemas/SimpleSchema.yaml'
-    description: Payment body object
+          $ref: '../../../components/schemas/Requests/FX/fxToken.yaml'
+    description: fxToken body object
     required: true
   x-code-samples:
     - lang: Curl
       source:
-        $ref: ../../../code_samples/CURL/direct/post.curl
+        $ref: ../../../code_samples/CURL/fxToken.curl

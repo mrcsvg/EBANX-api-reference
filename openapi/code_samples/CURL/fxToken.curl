@@ -1,0 +1,2 @@
+curl -X POST 'https://sandbox.ebanxpay.com/ws/fxtoken/get'
+    -d '{"integration_key": INTEGRATION_KEY, "country": "co", "currency_from": "USD", "currency_to": "COP"}'
