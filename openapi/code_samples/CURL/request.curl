@@ -1,0 +1,9 @@
+curl -X POST 'https://sandbox.ebanxpay.com/ws/request' \
+-d 'integration_key=your_test_integration_key_here' \
+-d 'name=José Silva' \
+-d 'email=josesilva@example.com' \
+-d 'country=br' \
+-d 'payment_type_code=_all' \
+-d 'merchant_payment_code=d59cb7166e7' \
+-d 'currency_code=BRL' \
+-d 'amount=100'
