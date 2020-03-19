@@ -1,0 +1,3 @@
+curl -X GET -G 'https://sandbox.ebanxpay.com/ws/getBankList' \
+-d 'integration_key=your_test_integration_key' \
+-d 'country_code=co'
