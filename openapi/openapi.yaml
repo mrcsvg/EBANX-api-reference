@@ -110,7 +110,7 @@ x-tagGroups:
     tags:
       - Cancel
       - Refund
-      - Refund of Cancel
+      - Refund or Cancel
   - name: Utillities
     tags:
       - Utils
