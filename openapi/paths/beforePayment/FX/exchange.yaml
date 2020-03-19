@@ -4,9 +4,7 @@ post:
   summary: Get FX rate
   description: |
 
-    This is a description
-    > **Note** 
-    > This is a description
+    The exchange operation is a server-to-server HTTP POST used by the merchant website to query EBANX for the current exchange rate for a given currency.
 
   operationId: exchange
   security:
@@ -17,23 +15,27 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../../../components/schemas/PaymentResponse.yaml'
+            $ref: '../../../components/schemas/Responses/exchange.yaml'
           examples:
             OK: #todo mudar
               value : 
                 {
-                  "say": "hello world"
-                }           
+                  "currency_rate": {
+                    "code": "USD",
+                    "base_code": "BRL",
+                    "name": "Real to US Dollar",
+                    "rate": "2.7731"
+                  },
+                  "status": "SUCCESS"
+                }        
   requestBody:
     content:
       application/json:
         schema:
-          oneOf: 
-            - $ref: '../../../components/schemas/RequestBody.yaml'
-            - $ref: '../../../components/schemas/SimpleSchema.yaml'
-    description: Payment body object
+          - $ref: '../../../components/schemas/Requests/FX/exchange.yaml'
+    description: Exchange body object
     required: true
   x-code-samples:
     - lang: Curl
       source:
-        $ref: ../../../code_samples/CURL/direct/post.curl
+        $ref: ../../../code_samples/CURL/exchange.curl
