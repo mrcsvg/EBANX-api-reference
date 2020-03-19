@@ -10,11 +10,11 @@
           description: 'invalid input, object invalid'
         '409':
           description: an existing item already exists
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '../../components/schemas/Requests/Payout/create.yaml'
+#      requestBody:
+#        content:
+#          application/json:
+#            schema:
+#              $ref: '../../components/schemas/Requests/Payout/create.yaml'
 #            examples:
 #              Payout to EBANX Account (eWallet):
 #                $ref: '#/components/examples/PayoutToEBANKeWallet' 

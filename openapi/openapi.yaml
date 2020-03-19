@@ -55,7 +55,8 @@ paths:
     $ref: paths/afterPayment/refundOrCancel.yaml
 
   #Payout
-  #/ws/payout/create:
+  /ws/payout/create:
+    %ref: paths/payout/create.yaml
 
   #/ws/payout/cancel:
 
