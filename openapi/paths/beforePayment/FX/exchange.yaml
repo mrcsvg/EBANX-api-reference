@@ -32,7 +32,7 @@ post:
     content:
       application/json:
         schema:
-          - $ref: '../../../components/schemas/Requests/FX/exchange.yaml'
+          $ref: '../../../components/schemas/Requests/FX/exchange.yaml'
     description: Exchange body object
     required: true
   x-code-samples:
