@@ -32,17 +32,17 @@ properties:
   currency_code:
     type: string
     description: |
-      Three-letter code of the payment currency. 
-      Supported currencies: 
-      - EUR
-      - BRL
-      - MXN
-      - PEN
-      - USD
-      - CLP
-      - COP
-      - ARS
-      - BOB
+      Three-letter code of the payment currency. Supported currencies:
+
+      -   EUR
+      -   BRL
+      -   MXN
+      -   PEN
+      -   USD
+      -   CLP
+      -   COP
+      -   ARS
+      -   BOB
     enum:
       - EUR
       - BRL
@@ -77,35 +77,35 @@ properties:
     description: |
       The code of the payment method. The supported codes are:
       
-      **_all:** all available payment methods for the merchant account in this country.
-      **amex:** American Express credit card (Brazil, Mexico, Colombia, Peru).
-      **baloto:** Baloto (Colombia).
-      **bancodobrasil:** Banco do Brasil online debit (Brazil).
-      **banrisul:** Banrisul online debit (Brazil).
-      **banktransfer:** Bank transfer (Brazil).
-      **boleto:** Boleto bancário (Brazil).
-      **bradesco:** Bradesco online debit (Brazil).
-      **carnet:** CARNET credit card (Mexico).
-      **diners:** Diners credit card (Brazil, Colombia, Peru).
-      **discover:** Discover credit card (Brazil).
-      **ebanxaccount:** EBANX Account (Brazil).
-      **eft:** Bank Transfer (Colombia).
-      **elo:** Elo credit card (Brazil).
-      **hipercard:** Hipercard credit card (Brazil).
-      **itau:** Itaú online debit (Brazil).
-      **mastercard:** MasterCard credit card (Brazil, Mexico, Colombia, Peru).
-      **multicaja:** Multicaja (Chile).
-      **oxxo:** OXXO (Mexico).
-      **pagoefectivo:** PagoEfectivo (Peru).
-      **pagosnet:** PagosNet (Bolivia).
-      **safetypay:** SafetyPay (Peru, Ecuador, Checkout only).
-      **safetypay-cash:** SafetyPay Cash (Peru, Ecuador).
-      **safetypay-online:** SafetyPay Online (Peru, Ecuador).
-      **sencillito:** Sencillito (Chile).
-      **servipag:** Servipag (Chile).
-      **spei:** SPEI bank transfer method (Mexico).
-      **visa:** Visa credit card (Brazil, Mexico, Colombia, Peru).
-      **webpay:** Webpay (Chile).
+      -   **_all:** all available payment methods for the merchant account in this country.
+      -   **amex:** American Express credit card (Brazil, Mexico, Colombia, Peru).
+      -   **baloto:** Baloto (Colombia).
+      -   **bancodobrasil:** Banco do Brasil online debit (Brazil).
+      -   **banrisul:** Banrisul online debit (Brazil).
+      -   **banktransfer:** Bank transfer (Brazil).
+      -   **boleto:** Boleto bancário (Brazil).
+      -   **bradesco:** Bradesco online debit (Brazil).
+      -   **carnet:** CARNET credit card (Mexico).
+      -   **diners:** Diners credit card (Brazil, Colombia, Peru).
+      -   **discover:** Discover credit card (Brazil).
+      -   **ebanxaccount:** EBANX Account (Brazil).
+      -   **eft:** Bank Transfer (Colombia).
+      -   **elo:** Elo credit card (Brazil).
+      -   **hipercard:** Hipercard credit card (Brazil).
+      -   **itau:** Itaú online debit (Brazil).
+      -   **mastercard:** MasterCard credit card (Brazil, Mexico, Colombia, Peru).
+      -   **multicaja:** Multicaja (Chile).
+      -   **oxxo:** OXXO (Mexico).
+      -   **pagoefectivo:** PagoEfectivo (Peru).
+      -   **pagosnet:** PagosNet (Bolivia).
+      -   **safetypay:** SafetyPay (Peru, Ecuador, Checkout only).
+      -   **safetypay-cash:** SafetyPay Cash (Peru, Ecuador).
+      -   **safetypay-online:** SafetyPay Online (Peru, Ecuador).
+      -   **sencillito:** Sencillito (Chile).
+      -   **servipag:** Servipag (Chile).
+      -   **spei:** SPEI bank transfer method (Mexico).
+      -   **visa:** Visa credit card (Brazil, Mexico, Colombia, Peru).
+      -   **webpay:** Webpay (Chile).
     minLength: 1
     maxLength: 32
     enum:
@@ -216,14 +216,14 @@ properties:
     description: |
       The two-letter country code for the customer country. The available codes are:
         
-      bo: Bolivia.
-      br: Brazil.
-      cl: Chile.
-      co: Colombia.
-      mx: Mexico.
-      pe: Peru.
-      ar: Argentina.
-      ec: Ecuador.
+      -   **bo**: Bolivia.
+      -   **br**: Brazil.
+      -   **cl**: Chile.
+      -   **co**: Colombia.
+      -   **mx**: Mexico.
+      -   **pe**: Peru.
+      -   **ar**: Argentina.
+      -   **ec**: Ecuador.
     enum:
       - bo
       - br
