@@ -59,8 +59,8 @@ paths:
     $ref: paths/payout/create.yaml
   /ws/payout/cancel:
     $ref: paths/payout/cancel.yaml
-
-  #/ws/payout/commit:
+  /ws/payout/commit:
+    $ref: paths/payout/commit.yaml
 
   #/ws/payout/retrieve:
 
