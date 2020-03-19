@@ -26,6 +26,14 @@ properties:
       -   **cl**: Chile.
       -   **ar**: Argentina.
       -   **bo**: Bolivia.
+    enum:
+      - br
+      - pe
+      - mx
+      - co
+      - cl
+      - ar
+      - bo
     minLength: 2
     maxLength: 2
     example: "CO"
@@ -36,6 +44,9 @@ properties:
 
       -   EUR
       -   USD
+    enum:
+      - EUR
+      - USD
     minLength: 3
     maxLength: 3
     example: "USD"
@@ -51,6 +62,14 @@ properties:
       -   COP
       -   ARS
       -   BOB
+    enum:
+      - BRL
+      - MXN
+      - PEN
+      - CLP
+      - COP
+      - ARS
+      - BOB
     minLength: 3
     maxLength: 3
     example: "COP"

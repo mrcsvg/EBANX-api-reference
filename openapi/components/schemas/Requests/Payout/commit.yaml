@@ -1,7 +1,7 @@
 type: object 
-title: /ws/payout/create
+title: /ws/payout/commit
 description: |
-  Stub schema for Cancel while i wait for the real one
+  Stub schema for commit while i wait for the real one
 required:
   - payee
 properties:
