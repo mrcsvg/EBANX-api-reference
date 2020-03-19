@@ -11,7 +11,7 @@ properties:
       The payment hash (EBANX unique identifier).
     minLength: 48
     maxLength: 48
-    example: "5476099e890c06ca6f02cae9da1b1faaf3c5929439076cb9"
+    example: "54737a76ffc1e5a520b0ed9062213a810ef41dae990184c7"
   format:
     type: string
     description: |
