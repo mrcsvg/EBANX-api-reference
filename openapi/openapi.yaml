@@ -25,7 +25,7 @@ tags:
   - name: Boleto
   - name: Cancel
   - name: Refund
-  - name: Refund of Cancel
+  - name: Refund or Cancel
 
 servers:
   - url: 'https://api.ebanxpay.com/'
