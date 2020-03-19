@@ -54,7 +54,18 @@ paths:
   /ws/refundOrCancel:
     $ref: paths/afterPayment/refundOrCancel.yaml
 
+  #Payout
+  #/ws/payout/create:
 
+  #/ws/payout/cancel:
+
+  #/ws/payout/commit:
+
+  #/ws/payout/retrieve:
+
+  #/ws/payout/simulate:
+
+  #/ws/payout/search:
 
   # Check customer balance
   /ws/documentBalance:
@@ -114,3 +125,6 @@ x-tagGroups:
   - name: Utillities
     tags:
       - Utils
+  #- name: Payout Operations
+  #  tags:
+  #    - Payout

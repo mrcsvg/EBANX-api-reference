@@ -1,0 +1,27 @@
+    post:
+      tags:
+        - Payout
+      summary: Creates a payout to EBANX or Payee account
+      description: Creates a payout to EBANX or Payee account
+      responses:
+        '201':
+          description: Payout created
+        '400':
+          description: 'invalid input, object invalid'
+        '409':
+          description: an existing item already exists
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '../../components/schemas/Requests/Payout/create.yaml'
+#            examples:
+#              Payout to EBANX Account (eWallet):
+#                $ref: '#/components/examples/PayoutToEBANKeWallet' 
+#              Payout to Payee bank account without sending bank data:
+#                $ref: '#/components/examples/PayoutToPayeeWithoutBankData' 
+#              Payout to Payee bank account sending bank data:
+#                $ref: '#/components/examples/PayoutToPayeeWithBankData'                 
+#              Payout to Payee bank account sending bank data with bank details:
+#                $ref: '#/components/examples/PayoutToPayeeWithBankDataAndDetails'                 
+        description: Inventory item to add
