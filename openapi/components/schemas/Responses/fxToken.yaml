@@ -1,0 +1,35 @@
+type: object
+properties:
+  fx_token:
+    type: string
+    description: |
+      The token identifier that must be used in operations with the fixed exchange rate.
+    maxLength: 100
+  currency_rate:
+    type: number
+    description: |
+      The fixed exchange rate that will be used in operations where this token is provided.
+  currency_from:
+    type: string
+    description: |
+      The same three-letter code provided in the request. Format: ISO 4217 three letter code.
+    minLength: 3
+    maxLength: 3
+  currency_to:
+    type: string
+    description: |
+      The same three-letter code provided in the request. Format: ISO 4217 three letter code.
+    minLength: 3
+    maxLength: 3
+  expire_date:
+    type: string
+    description: |
+      The date in which the token will become invalid. UTC Date.
+    minLength: 25
+    maxLength: 25
+  new_currency_rate_available_at:
+    type: string
+    description: |
+      The date on which the next token will become available. A new token will always be available at least one hour before the expire_date of the previous token. During this period both new and old tokens will be valid. UTC Date.
+    minLength: 25
+    maxLength: 25

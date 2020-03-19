@@ -1,0 +1,56 @@
+type: object 
+title: ws/fxtoken/get
+description: |
+  The exchange operation is a server-to-server HTTP POST used by the merchant website to query EBANX for the current exchange rate for a given currency.
+required:
+  - integration_key
+  - country
+  - currency_from
+  - currency_to
+properties:
+  integration_key:
+    type: string
+    description: |
+      Your unique and secret integration key.
+    maxLength: 100
+    example: "your_test_integration_key"
+  country: 
+    type: string
+    description: |
+      The two-letter code for the country where the operation is being processed. The available codes are:
+
+      -   **br**: Brazil.
+      -   **pe**: Peru.
+      -   **mx**: Mexico.
+      -   **co**: Colombia.
+      -   **cl**: Chile.
+      -   **ar**: Argentina.
+      -   **bo**: Bolivia.
+    minLength: 2
+    maxLength: 2
+    example: "CO"
+  currency_from: 
+    type: string
+    description: |
+      The three-letter currency code **from** which the amount will be converted. Supported currencies:
+
+      -   EUR
+      -   USD
+    minLength: 3
+    maxLength: 3
+    example: "USD"
+  currency_to: 
+    type: string
+    description: |
+      The three-letter currency code **to** which the amount will be converted. Supported currencies:
+
+      -   BRL
+      -   MXN
+      -   PEN
+      -   CLP
+      -   COP
+      -   ARS
+      -   BOB
+    minLength: 3
+    maxLength: 3
+    example: "COP"
