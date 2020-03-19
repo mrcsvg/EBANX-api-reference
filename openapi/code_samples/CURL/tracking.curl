@@ -1,0 +1,5 @@
+curl -X POST -G 'https://sandbox.ebanxpay.com/ws/documentbalance' \
+    -d 'integration_key=your_test_integration_key' \
+    -d 'email=jose@example.com'
+    -d 'order_number=1928374656'
+    -d 'tracking_code=cdfg46633bgg67674'

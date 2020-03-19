@@ -14,16 +14,19 @@ properties:
     maxLength: 100
     description: |
       Your unique and secret integration key.
+    example: your_test_integration_key
   email:
     type: string
     description: |
       The customer email.
     minLength: 5
     maxLength: 100
+    example: jose@example.com
   order_number:
     type: string
     description: |
       Payment order number.
+    example: 1928374656
   tracking_code:
     type: object
     description: |
@@ -35,6 +38,7 @@ properties:
         type: string
         description: |
           Package tracking code.
+        example: cdfg46633bgg67674
       payment_hash:
         type: string
         description: |
