@@ -4,9 +4,7 @@ post:
   summary: Request
   description: |
 
-    This is a description
-    > **Note** 
-    > This is a description
+    This method allows you to create a payment using EBANX Payment Page, where the customer is redirected to EBANX’s website to enter his data.
 
   operationId: request
   security:
@@ -22,8 +20,31 @@ post:
             OK: #todo mudar
               value : 
                 {
-                  "say": "hello world"
-                }           
+                  "status":"SUCCESS",
+                  "payment":{
+                    "hash":"5ae0b5d4f1883ed4b214c0277af29f1981443f59a26eef87",
+                    "pin":"422795725",
+                    "country":"br",
+                    "merchant_payment_code":"d59cwwwb7166e7",
+                    "order_number":null,
+                    "status":"OP",
+                    "status_date":null,
+                    "open_date":"2018-04-25 17:07:31",
+                    "confirm_date":null,
+                    "transfer_date":null,
+                    "amount_br":100.38,
+                    "amount_ext":100,
+                    "amount_iof":0.38,
+                    "currency_rate":1,
+                    "currency_ext":"BRL",
+                    "due_date":"2018-04-28",
+                    "instalments":1,
+                    "payment_type_code":"_all",
+                    "pre_approved":false,
+                    "capture_available":null,
+                    "redirect_url":"https://sandbox.ebanxpay.com/checkout/?hash=5ae0b5d4f1883ed4b214c0277af29f1981443f59a26eef87"
+                  }
+                }         
   requestBody:
     content:
       application/json:
@@ -34,4 +55,4 @@ post:
   x-code-samples:
     - lang: Curl
       source:
-        $ref: ../../code_samples/CURL/direct/post.curl
+        $ref: ../../code_samples/CURL/request.curl
