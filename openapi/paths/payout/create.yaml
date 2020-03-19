@@ -32,20 +32,7 @@
                     document_type: cpf
                     birthdate: '1977-05-25'
 #                $ref: '#/components/examples/PayoutToEBANKeWallet' 
-              Payout to Payee bank account without sending bank data:
-                value:
-                  integration_key: your_test_integration_key
-                  external_reference: PAYOUT_EBANX_02
-                  country: br
-                  amount: 10
-                  currency_code: USD
-                  payee:
-                    name: Han Solo
-                    email: chew@bac.ca
-                    phone: '+554112345678'
-                    document: 85351346893
-                    document_type: cpf
-                    birthdate: '1977-05-25'
+#              Payout to Payee bank account without sending bank data:
 #                $ref: '#/components/examples/PayoutToPayeeWithoutBankData' 
 #              Payout to Payee bank account sending bank data:
 #                $ref: '#/components/examples/PayoutToPayeeWithBankData'                 
