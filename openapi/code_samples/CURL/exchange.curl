@@ -1,0 +1,4 @@
+curl -X GET -G 'https://sandbox.ebanxpay.com/ws/exchange' \
+    -d 'integration_key=your_test_integration_key' \
+    -d 'currency_code=USD'
+    -d 'currency_base_code=BRL'
