@@ -17,7 +17,7 @@ properties:
     type: string
     description: |
       The payment hash (EBANX unique identifier).
-      Required if merchant_payment_code not provided.
+      **Required if merchant_payment_code not provided.**
     minLength: 48
     maxLength: 48
     example: "5478ba283ef8674415082844ee14817376e49bb76aa9d4c7"
@@ -25,7 +25,7 @@ properties:
     type: string
     description: |
       The payment hash Merchant Payment Code (unique merchant ID).
-      Required if hash not provided.
+      **Required if hash not provided.**
     minLength: 1
     maxLength: 40
-    example: "126378126"
+    example: "1416854121"
