@@ -1,0 +1,64 @@
+type: object 
+title: /ws/payout/create
+description: |
+  Creates a payout to EBANX or Payee account.
+required:
+  - payee
+properties:
+  payee:
+    type: object
+    description: |
+      **Insert Payee description here**
+    required:
+      - name
+      - email
+      - phone
+      - document
+      - document_type
+      - birthdate
+    properties:
+      name: 
+        type: string
+        example: "Han Solo"
+      email: 
+        type: string
+        format: email
+        example: "chew@bac.ca"
+      phone:
+        type: string
+        example: "+554112345678"
+      document:
+        type: string
+        example: 85351346893
+      document_type:
+        type: string
+        example: "cpf"
+      birthdate: 
+        type: string
+        format: yyyy-mm-dd
+        example: "1977-05-25"
+      bank_info:
+        type: object
+        description: |
+          **Insert Bank Description here**
+        required: 
+          - bank_name
+          - bank_branch
+          - bank_account
+          - account_type
+        properties:
+          bank_name:
+            type: string
+            example: "341 Itaú"
+          bank_branch:
+            type: string
+            example: "3707"
+          bank_account:
+            type: string
+            example: "01854-9"  
+          account_type:
+            type: string
+            example: "C"
+          bank_details:
+            type: string
+            example: "001"
