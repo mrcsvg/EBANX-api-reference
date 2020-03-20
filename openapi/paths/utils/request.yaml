@@ -1,7 +1,7 @@
 post:
   tags:
-    - Utils
-  summary: Request
+    - Payment Page
+  summary: Payment Page API
   description: |
 
     This method allows you to create a payment using EBANX Payment Page, where the customer is redirected to EBANX’s website to enter his data.
