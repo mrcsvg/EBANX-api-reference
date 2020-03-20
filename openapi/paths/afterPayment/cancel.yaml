@@ -4,9 +4,9 @@ post:
   summary: Cancel 
   description: |
 
-The cancel operation is a server-to-server operation that cancels payments.
+    The cancel operation is a server-to-server operation that cancels payments.
 
-You can cancel one payment if, and only if, its status is open (OP) or pending (PE). It’s important to know that confirmed payments (CO) cannot be cancelled.
+    You can cancel one payment if, and only if, its status is open (OP) or pending (PE). It’s important to know that confirmed payments (CO) cannot be cancelled.
 
   operationId: cancel
   security:
