@@ -21,9 +21,11 @@ properties:
       The token that you want to associate the CVV with.
     minLength: 32
     maxLength: 128
+    example: "805c49a8c606b4f2d53fad5aa688ec6c3aa247b83ac2146ee148e328244670b16f5cb719766b3a82e902387670958e71c323413c62df5ce975c1abf99d2049c6"
   card_cvv:
     type: string
     description: |
       Credit card security code.
     minLength: 3
     maxLength: 4
+    example: "123"
