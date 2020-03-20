@@ -17,7 +17,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../../components/schemas/Requests/Payout/cancel.yaml'
+          $ref: '../../components/schemas/Requests/Payout/ExistingPayout.yaml'
         examples:
           Search payout:
             value:
