@@ -3,11 +3,7 @@ post:
     - Credit Card
   summary: Capture a payment
   description: |
-
-    This is a description
-    > **Note** 
-    > This is a description
-
+    This is a server-to-server HTTP POST used by the merchant to capture credit card payments when the `auto_capture` flag is `false` in the [Direct Operation](https://developers.ebanx.com/api-reference/full-api-documentation/ebanx-payment-2/payment-reference/reference-direct-operation/).
   operationId: capture
   security:
     - integration_key: []
@@ -17,13 +13,39 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../../components/schemas/PaymentResponse.yaml'
+            $ref: '../../components/schemas/Responses/capture.yaml'
           examples:
             OK: #todo mudar
               value : 
                 {
-                  "say": "hello world"
-                }           
+                  "payment": {
+                      "hash": "5478ba283ef8674415082844ee14817376e49bb76aa9d4c7",
+                      "merchant_payment_code": "126378126",
+                      "order_number": null,
+                      "status": "CO",
+                      "status_date": "2014-11-28 16:09:19",
+                      "open_date": "2014-11-28 16:08:39",
+                      "confirm_date": "2014-11-28 16:09:19",
+                      "transfer_date": null,
+                      "amount_br": "100.00",
+                      "amount_ext": "100.00",
+                      "amount_iof": "0.00",
+                      "currency_rate": "1.0000",
+                      "currency_ext": "BRL",
+                      "due_date": "2014-12-05",
+                      "instalments": "1",
+                      "payment_type_code": "visa",
+                      "transaction_status": {
+                          "acquirer": "EBANX",
+                          "code": "OK",
+                          "description": "Cartão de teste autorizado - aguardando captura",
+                          "authcode": "12345"
+                      },
+                      "pre_approved": true,
+                      "capture_available": false
+                    },
+                  "status": "SUCCESS"
+                }      
   requestBody:
     content:
       application/json:
@@ -34,4 +56,4 @@ post:
   x-code-samples:
     - lang: Curl
       source:
-        $ref: ../../code_samples/CURL/direct/post.curl
+        $ref: ../../code_samples/CURL/capture.curl
