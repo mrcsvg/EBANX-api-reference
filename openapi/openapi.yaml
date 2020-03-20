@@ -21,6 +21,7 @@ tags:
   - name: FX
   - name: Utils 
   - name: Payout
+    x-displayName: Payout [WIP ⚠️]
     description: 
       $ref: md_descriptions/payout.md
   - name: Credit Card
@@ -130,6 +131,6 @@ x-tagGroups:
   - name: Utillities
     tags:
       - Utils
-  - name: Payout Operations
+  - name: Payout Operations 
     tags:
       - Payout

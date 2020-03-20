@@ -3,44 +3,157 @@ title: /ws/payout/create
 description: |
   Creates a payout to EBANX or Payee account.
 required:
+  - integration_key
+  - external_reference
+  - country
+  - amount
+  - currency_code
   - payee
 properties:
+  integration_key:
+    type: string
+    description: |
+      Your unique and secret integration key.
+    maxLength: 100
+    example: "your_test_integration_key"
+  external_reference:
+    type: string
+    description: |
+      The unique payout ID provided by you.
+    minLength: 4
+    maxLength: 60
+    example: "PAYOUT_EBANX_01"
+  country:
+    type: string
+    description: |
+      The two-letter country code for the customer country. The available codes are:
+
+      -   **br**: Brazil.
+      -   **cl**: Chile.
+      -   **co**: Colombia.
+      -   **mx**: Mexico.
+      -   **pe**: Peru.
+    minLength: 2
+    maxLength: 2
+    example: br
+    enum:
+      - br
+      - cl
+      - co
+      - mx
+      - pe
+  amount:
+    type: number
+    description: |
+      The amount in the specified currency (currency_code). E.g.,: 100.50.
+    example: 100
+  currency_code:
+    type: string
+    description: |
+      Three-letter code of the payout currency. Supported currencies:
+
+      -   **Brazil**: BRL, EUR, USD, GBP.
+      -   **Chile**: CLP, EUR, USD, GBP.
+      -   **Colombia**: COP, EUR, USD, GBP.
+      -   **Mexico**: MXN, EUR, USD, GBP.
+      -   **Peru**: PEN, EUR, USD, GBP.
+    minLength: 3
+    maxLength: 3
+    enum:
+      - BRL
+      - CLP
+      - COP
+      - EUR
+      - GBP
+      - USD
+      - MXN
+      - PEN
+    example: BRL
+  target:
+    type: string
+    description: |
+      Payout target. Supported targets:
+
+      -   **ebanx_wallet**: Payee's EBANX Wallet. (Available only in **Brazil** and **Mexico**)
+      -   **bank_account**: Payee's bank account.
+
+      The default value is `bank_account`.
+    minLength: 12
+    maxLength: 12
+    enum:
+      - ebanx_wallet
+      - bank_account
+    example: bank_account
   payee:
     type: object
     description: |
-      **Insert Payee description here**
+      JSON with Payee information.
     required:
       - name
       - email
-      - phone
       - document
       - document_type
       - birthdate
     properties:
       name: 
         type: string
+        description: |
+          Payee full name.
         example: "Han Solo"
       email: 
         type: string
+        description: |
+          Payee email address.
         format: email
         example: "chew@bac.ca"
       phone:
         type: string
+        description: |
+          Payee phone number.
         example: "+554112345678"
       document:
         type: string
+        description: |
+          Payee national identification number.
+
+          -   **Brazil**: CPF (natural person taxpayer ID) or CNPJ (business taxpayer ID).
+          -   **Chile**: RUT (Chilean taxation unique contributor roll identification number).
+          -   **Colombia**: Cédula de Ciudadanía -- CC (National Identity Document) or Cédula de Extranjería -- CE (National Identity Document for Immigrants).
+          -   **Peru**: DNI (National Identity Document).
+          -   **Mexico**: Payee document is **optional** for Mexico.
         example: 85351346893
+        maxLength: 32
       document_type:
         type: string
-        example: "cpf"
+        description: |
+          Payee national identification number type.
+
+          -   **Brazil**: CPF or CNPJ.
+          -   **Chile**: RUT.
+          -   **Colombia**: CC or CE.
+          -   **Peru**: DNI.
+          -   **Mexico**: Payee document type is **optional** for Mexico.
+        example: "CPF"
+        maxLength: 5
+        enum:
+          - CPF
+          - CNPJ
+          - RUT
+          - CC
+          - CE
+          - DNI
       birthdate: 
         type: string
+        description: |
+          Payee birthdate in the format yyyy-mm-dd. E.g., 1977-05-25 **Optional** in Brazil when the Payee document type is `CNPJ`.
         format: yyyy-mm-dd
         example: "1977-05-25"
+        minLength: 10
+        maxLength: 10
       bank_info:
         type: object
         description: |
-          **Insert Bank Description here**
+          JSON with Payee bank account information.
         required: 
           - bank_name
           - bank_branch
@@ -49,16 +162,42 @@ properties:
         properties:
           bank_name:
             type: string
+            description: |
+              Bank Name.
             example: "341 Itaú"
           bank_branch:
             type: string
+            description: |
+              Bank Branch Number
+
+              Required for **Brazil**.
             example: "3707"
           bank_account:
             type: string
+            description: |
+              Bank account number.
+
+              Optional for **Mexico**, except when the bank is: `BANME - BANCO SANTANDER`.
             example: "01854-9"  
           account_type:
             type: string
+            description: |
+              Bank account type.
+
+              -   **C** -- for checking account.
+              -   **S** -- for savings account.
+            minLength: 1
+            maxLength: 1
+            enum:
+              - C
+              - S
             example: "C"
           bank_details:
             type: string
+            description: |
+              Additional information of the bank account.
+
+              -   **Brazil**: 3 digits operation code if bank is `104 Caixa Econômica`.
+              -   **Colombia**: city name.
+              -   **Mexico**: Clabe (Mexican standardized banking cipher).
             example: "001"

@@ -1,0 +1,4 @@
+oneOf:
+  - $ref: ./ExistingPayoutWithExternalReference.yaml
+  - $ref: ./ExistingPayoutWithUID.yaml
+# Works for cancel, commit and retrieve
