@@ -8,7 +8,7 @@ All the requirements of the Direct API can be found in our [developers portal](h
 
 # Documentation Changelog
 
-That is just a change log to guide us until the final launch of this documentation... After that, it is going to be replaced by our API Changelog.
+This is just a change log to guide us until the final launch of this documentation... After that, it is going to be replaced by our API Changelog.
 
 ## Changelog 👀
 
@@ -36,6 +36,7 @@ First big version with basic API reference for:
 
 ### v0.5
 - Better user of markups
+- 3DS Documentation again 😅
 - AMOPs (Focused in Cash payment)
 
 
