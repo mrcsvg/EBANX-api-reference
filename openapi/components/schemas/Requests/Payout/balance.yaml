@@ -1,26 +1,13 @@
-post:
-  tags:
-    - Payout
-  summary: Cancel any Payout request
-  description: | 
-    Within this end-point you will be able to **cancel a payout** using payouts's *"external_reference"* or its *"uid"*   
-
-    The payout has to be in a status equal to OP and within the cancellation time.
-  responses:
-    '201':
-      description: Payout created
-    '400':
-      description: 'invalid input, object invalid'
-    '409':
-      description: an existing item already exists
-  requestBody:
-    content:
-      application/json:
-        schema:
-          $ref: '../../components/schemas/Requests/Payout/cancel.yaml'
-        examples:
-          Search payout:
-            value:
-              integration_key: your_test_integration_key
-              uid: 0f28f5b2bf60536d78b2dbf003c13886dd452d926
-            #$ref: '#/components/examples/PayoutUid' 
+type: object 
+title: /ws/payout/balance
+description: |
+  Schema for Payout Balance Operation Request
+required:
+  - integration_key
+properties:
+  integration_key:
+    type: string
+    description: |
+      Your unique and secret integration key.
+    maxLength: 100
+    example: "your_test_integration_key"
