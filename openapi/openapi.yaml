@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info:
-  version: 0.9.2
-  title: EBANX Payment - 3DS 2.0
+  version: 0.2
+  title: EBANX Payment API Reference
   termsOfService: 'https://business.ebanx.com/en/legal-terms/for-customers/privacy-policy'
   contact:
     email: integration@ebanx.com
@@ -117,7 +117,7 @@ x-tagGroups:
     tags:
       - Credit Card
       - Debit Card
-      - Boleto
+#      - Boleto
   - name: After the payment
     tags:
       - Cancel
