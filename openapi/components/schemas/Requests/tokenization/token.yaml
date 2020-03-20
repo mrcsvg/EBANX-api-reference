@@ -40,6 +40,7 @@ properties:
       - visa
     minLength: 1
     maxLength: 32
+    example: visa
   token:
     type: string
     description: |
@@ -50,12 +51,19 @@ properties:
     type: string
     description: |
       The two-letter country code for the customer country. The available codes are:
-      br: Brazil.
-      co: Colombia.
-      mx: Mexico.
-      pe: Peru.
+
+      -   **br**: Brazil.
+      -   **co**: Colombia.
+      -   **mx**: Mexico.
+      -   **pe**: Peru.
     minLength: 2
     maxLength: 2
+    enum:
+      - br
+      - co
+      - mx
+      - pe
+    example: br
   creditcard:
     type: object
     description: |
@@ -72,20 +80,24 @@ properties:
           The credit card number (14-19 digits, must pass the Luhn algorithm).
         minLength: 14
         maxLength: 19
+        example: 4111111111111111
       card_name:
         type: string
         description: The cardholder name, as written in the credit card.
         minLength: 1
         maxLength: 64
+        example: "Jose da Silva"
       card_due_date:
         type: string
         description: |
           The credit card valid thru date (formatted as mm/yyyy).
         minLength: 7
         maxLength: 7
+        example: "10/2020"
       card_cvv:
         type: string
         description: |
           The Card Verification Value (CVV) (3-4 digits).
         minLength: 3
         maxLength: 4
+        example: "123"
