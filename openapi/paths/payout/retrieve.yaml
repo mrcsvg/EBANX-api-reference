@@ -2,7 +2,7 @@ post:
   tags:
     - Payout
   summary: Retrieve Payout request
-  description: Within this end-point you will be able to **cancel a payout** using payouts's *"external_reference"* or its *"uid"* 
+  description: Within this end-point you will be able to **retrieve a payout** using payouts's *"external_reference"* or its *"uid"* 
   responses:
     '201':
       description: Payout created

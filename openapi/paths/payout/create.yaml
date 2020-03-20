@@ -2,7 +2,7 @@
       tags:
         - Payout
       summary: Create a Payout
-      description: Creates a payout to EBANX or Payee account
+      description: This method allows you to create a payout.
       responses:
         '201':
           description: Payout created
