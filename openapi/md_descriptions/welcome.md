@@ -6,11 +6,45 @@ The EBANX Direct API is the transparent checkout (with no redirect) solution tha
 All the requirements of the Direct API can be found in our [developers portal](https://developers.ebanx.com/api-reference/ebanx-payment-api/payment-reference/reference-direct-operation/)
 
 
+# Documentation Changelog
+
+That is just a change log to guide us until the final launch of this documentation... After that, it is going to be replaced by our API Changelog.
+
+## Changelog 👀
+
+### v0.2
+
+First big version with basic API reference for:
+- Before payment
+    - FX, Tokenization
+- Make a payment
+    - Credit card payment to all the countries
+    - Payment page 
+- After payment
+    - Cancel and refund 
+- Utils
+    - Document balance, ZipCode, Tracking, Query, Print, BankList
+
+## Comming soon 💪
+### v0.3
+- Payout documentation
+
+### v0.4
+- Texts review;
+- Deployment to EBANX domain on github pages;
+- Feedback channel;
+
+### v0.5
+- Better user of markups
+- AMOPs (Focused in Cash payment)
+
+
+
 # Authentication
 With just one integration, your company can sell to consumers based in Brazil, Mexico, Argentina, Colombia, Chile, Peru, and Ecuador. Offering local payment options is an excellent opportunity to increase your sales and reach even more customers.   
 
 
-### Request your test account**  
+### Request your test account
 If you don't have your testing account yet, access our **EBANX Business Page**, select your business model and answer a few questions. One of our Business Development Analysts will get in touch shortly. At this stage, you will have access to your test Integration keys. Only after the conclusion of your negotiation and the integration process with our team, you will receive your live integration keys.  
 
 
