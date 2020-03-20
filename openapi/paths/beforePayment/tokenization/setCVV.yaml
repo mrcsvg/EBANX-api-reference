@@ -24,7 +24,7 @@ post:
             OK: #todo mudar
               value : 
                 {
-                  "status": "SUCCESS"
+                  "status": "SUCCESS",
                   "token": "805c49a8c606b4f2d53fad5aa688ec6c3aa247b83ac2146ee148e328244670b16f5cb719766b3a82e902387670958e71c323413c62df5ce975c1abf99d2049c6",
                   "masked_card_number": "411111xxxxxx1111"
                 }           
@@ -38,4 +38,4 @@ post:
   x-code-samples:
     - lang: Curl
       source:
-        $ref: ../../../code_samples/CURL/direct/post.curl
+        $ref: ../../../code_samples/CURL/setCVV.curl
