@@ -1,0 +1,7 @@
+curl -X POST 'https://sandbox.ebanxpay.com/ws/refund' \
+  -d 'integration_key=your_test_integration_key' \
+  -d 'operation=request' \
+  -d 'merchant_refund_code=787653' \
+  -d 'hash=5ad9028b30eb8de099f9fe72b9763283c7cf4d35b6430221' \
+  -d 'amount=100.00' \
+  -d 'description=Order did not arrive'
