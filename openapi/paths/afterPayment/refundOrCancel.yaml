@@ -57,4 +57,4 @@ post:
   x-code-samples:
     - lang: Curl
       source:
-        $ref: ../../code_samples/CURL/direct/post.curl
+        $ref: ../../code_samples/CURL/refundOrCancel.curl
