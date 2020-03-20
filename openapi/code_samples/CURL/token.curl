@@ -1,0 +1,12 @@
+curl -X POST 'https://sandbox.ebanxpay.com/ws/token' \
+  -d 'request_body={
+    "integration_key": "your_test_integration_key",
+    "payment_type_code": "visa",
+    "country": "br",
+    "creditcard": {
+    "card_number": "4111111111111111",
+    "card_name": "Jose da Silva",
+    "card_due_date": "10/2020",
+    "card_cvv": "123"
+  }
+}'
