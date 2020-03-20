@@ -1,0 +1,3 @@
+curl -X POST -G 'https://sandbox.ebanxpay.com/ws/capture' \
+    -d 'integration_key=your_test_integration_key' \
+    -d 'hash=5478ba283ef8674415082844ee14817376e49bb76aa9d4c7'
