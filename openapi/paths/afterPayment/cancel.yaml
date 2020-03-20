@@ -4,9 +4,9 @@ post:
   summary: Cancel 
   description: |
 
-    This is a description
-    > **Note** 
-    > This is a description
+The cancel operation is a server-to-server operation that cancels payments.
+
+You can cancel one payment if, and only if, its status is open (OP) or pending (PE). It’s important to know that confirmed payments (CO) cannot be cancelled.
 
   operationId: cancel
   security:
@@ -17,13 +17,33 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../../components/schemas/PaymentResponse.yaml'
+            $ref: '../../components/schemas/Responses/cancel.yaml'
           examples:
             OK: #todo mudar
-              value : 
-                {
-                  "say": "hello world"
-                }           
+              {
+                "payment": {
+                    "hash": "5476099e890c06ca6f02cae9da1b1faaf3c5929439076cb9",
+                    "merchant_payment_code": "1461416920319",
+                    "order_number": "146",
+                    "status": "CA",
+                    "status_date": "2014-11-26 17:34:11",
+                    "open_date": "2014-11-25 10:45:56",
+                    "confirm_date": null,
+                    "transfer_date": null,
+                    "amount_br": "204.45",
+                    "amount_ext": "87.00",
+                    "amount_iof": "0.00",
+                    "currency_rate": "2.3500",
+                    "currency_ext": "USD",
+                    "due_date": "2014-12-2",
+                    "instalments": "1",
+                    "payment_type_code": "boleto",
+                    "pre_approved": false,
+                    "capture_available": null,
+                },
+                "operation": "cancel",
+                "status": "SUCCESS"
+              }         
   requestBody:
     content:
       application/json:
@@ -34,4 +54,4 @@ post:
   x-code-samples:
     - lang: Curl
       source:
-        $ref: ../../code_samples/CURL/direct/post.curl
+        $ref: ../../code_samples/CURL/cancel.curl
