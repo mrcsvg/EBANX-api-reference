@@ -26,6 +26,7 @@ tags:
   - name: Cancel
   - name: Refund
   - name: Refund or Cancel
+  - name: Payment Page
 
 servers:
   - url: 'https://api.ebanxpay.com/'
@@ -115,6 +116,7 @@ x-tagGroups:
       - Tokenization
   - name: Make a payment
     tags:
+      - Payment Page
       - Credit Card
       - Debit Card
       - Boleto
