@@ -90,7 +90,7 @@ paths:
 
   # Vish zone
   /ws/request:
-    $ref: paths/utils/request.yaml
+    $ref: paths/makePayment/request.yaml
 
   /ws/query:
     $ref: paths/utils/query.yaml
