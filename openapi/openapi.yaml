@@ -21,6 +21,8 @@ tags:
   - name: FX
   - name: Utils 
   - name: Payout
+    description: 
+      $ref: md_descriptions/payout.md
   - name: Credit Card
   - name: Boleto
   - name: Cancel

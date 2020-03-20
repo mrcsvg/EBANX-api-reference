@@ -2,7 +2,10 @@ post:
   tags:
     - Payout
   summary: Cancel any Payout request
-  description: Within this end-point you will be able to **cancel a payout** using payouts's *"external_reference"* or its *"uid"* 
+  description: | 
+    Within this end-point you will be able to **cancel a payout** using payouts's *"external_reference"* or its *"uid"*   
+
+    The payout has to be in a status equal to OP and within the cancellation time.
   responses:
     '201':
       description: Payout created

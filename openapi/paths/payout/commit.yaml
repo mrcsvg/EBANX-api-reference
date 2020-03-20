@@ -2,7 +2,10 @@ post:
   tags:
     - Payout
   summary: Commit Payout request
-  description: Within this end-point you will be able to **cancel a payout** using payouts's *"external_reference"* or its *"uid"* 
+  description: |
+    Within this end-point you will be able to **commit a payout** using payouts's *"external_reference"* or its *"uid"*  
+
+    This method allows you to commit a payout, starting the payment process, without having to wait the cancellation time. The payout has to be in a status equal to OP and within the cancellation time.
   responses:
     '201':
       description: Payout created
