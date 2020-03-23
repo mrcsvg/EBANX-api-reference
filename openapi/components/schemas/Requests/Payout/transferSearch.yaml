@@ -1,26 +1,54 @@
-post:
-  tags:
-    - Payout
-  summary: Cancel any Payout request
-  description: | 
-    Within this end-point you will be able to **cancel a payout** using payouts's *"external_reference"* or its *"uid"*   
+type: object 
+title: /ws/payout/transfer/search
+description: |
+  Stub schema for search while i wait for the real one
+required:
+  - integration_key
+  - date_from
+  - date_to
+properties:
+  integration_key:
+    type: string
+    description: |
+      Your unique and secret integration key.
+    maxLength: 100
+    example: "your_test_integration_key"
+  date_from:
+    type: string
+    description: |
+      Initial date in the format `yyyy-mm-dd`. E.g. 1977-05-25
+    minLength: 10
+    maxLength: 10
+    example: "1977-05-25"
+  date_to:
+    type: string
+    description: |
+      End date in the format `yyyy-mm-dd`. E.g. 1977-05-26
+    minLength: 10
+    maxLength: 10
+    example: "1977-05-26"
+  page:
+    type: integer
+    description: |
+      The page number of the current search.
+    example: 2
+  status:
+    type: string
+    description: |
+      The transfer status. The following statuses are available:
 
-    The payout has to be in a status equal to OP and within the cancellation time.
-  responses:
-    '201':
-      description: Payout created
-    '400':
-      description: 'invalid input, object invalid'
-    '409':
-      description: an existing item already exists
-  requestBody:
-    content:
-      application/json:
-        schema:
-          $ref: '../../components/schemas/Requests/Payout/cancel.yaml'
-        examples:
-          Search payout:
-            value:
-              integration_key: your_test_integration_key
-              uid: 0f28f5b2bf60536d78b2dbf003c13886dd452d926
-            #$ref: '#/components/examples/PayoutUid' 
+      -   **OP**: the payout is waiting to start the payment process.
+      -   **PA**: the payout is paid.
+      -   **CA**: the payout is cancelled.
+    minLength: 2
+    maxLength: 2
+    enum:
+      - CA
+      - OP
+      - PA
+    example: OP
+  per_page:
+    type: integer
+    description: |
+      Max number of transfers per page (**API Max**: 50)
+    example: 20

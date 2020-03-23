@@ -1,0 +1,5 @@
+oneOf:
+  - $ref: ./transferCancelCommitRetrieve_ER.yaml
+  - $ref: ./transferCancelCommitRetrieve_TC.yaml
+  - $ref: ./transferCancelCommitRetrieve_SC.yaml
+  - $ref: ./transferCancelCommitRetrieve_UID.yaml

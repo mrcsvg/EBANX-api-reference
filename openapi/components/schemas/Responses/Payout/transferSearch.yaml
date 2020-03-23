@@ -1,26 +1,93 @@
-post:
-  tags:
-    - Payout
-  summary: Cancel any Payout request
-  description: | 
-    Within this end-point you will be able to **cancel a payout** using payouts's *"external_reference"* or its *"uid"*   
+type: object 
+title: /ws/payout/transfer/search
+description: |
+  This method allows you to retrieve multiple transfers information.
+properties:
+  type:
+    type: string
+    description: |
+      The type of the response (`success`, `api_error`, `authentication_error`, `invalid_request_error`, or `request_error`).
+    example: "success"
+  records:
+    type: integer
+    description: |
+      Total number of records
+  total_pages:
+    type: integer
+    description: |
+      Total number of pages
+  per_page:
+    type: integer
+    description: |
+      Number of register per page
+  page:
+    type: integer
+    description: |
+      Number of the current page
+  transfer:
+    type: array
+    items:
+      type: object
+      description: |
+        A JSON object that represents the transfer.
+      properties:
+        uid:
+          type: string
+          description: |
+            The transfer uid (EBANX unique identifier).
+          maxLength: 50
+        external_reference:
+          type: string
+          description: |
+            The unique transfer ID provided by you.
+          minLength: 6
+          maxLength: 40
+          example: PAYOUT_TRANSFER_01
+        status:
+          type: string
+          description: |
+            The transfer status. The following statuses are available:
+            -   **OP**: the payout is waiting to start the payment process. It can change either to CA or to PE.
+            -   **PA**: the payout is paid.
+            -   **CA**: the payout is canceled.
+          minLength: 2
+          maxLength: 2
+          example: PA
+        request_date:
+          type: string
+          description:
+            The date and hour of when the transfer was requested. UTC Date.
+          minLength: 19
+          maxLength: 19
+        confirm_date:
+          type: string
+          description:
+            The date and hour of when the transfer was confirmed. UTC Date.
+          minLength: 19
+          maxLength: 19
+        cancel_date:
+          type: string
+          description:
+            The date and hour of when the transfer was cancelled. UTC Date.
+          minLength: 19
+          maxLength: 19
+        amount:
+          type: number
+          description: |
+            The transfer amount.
+          example: 150.00
+        transfer_code:
+          type: string
+          description: |
+            The unique identifier to be used during the bank transfer. *Only for Wire transfers*
+        settlement_code:
+          type: string
+          description: |
+            The settlement when the transfer was debited. *Only for transfers using Payment Balance*
+        source:
+          type: string
+          description: |
+            The transfer source. The following references are available:
 
-    The payout has to be in a status equal to OP and within the cancellation time.
-  responses:
-    '201':
-      description: Payout created
-    '400':
-      description: 'invalid input, object invalid'
-    '409':
-      description: an existing item already exists
-  requestBody:
-    content:
-      application/json:
-        schema:
-          $ref: '../../components/schemas/Requests/Payout/cancel.yaml'
-        examples:
-          Search payout:
-            value:
-              integration_key: your_test_integration_key
-              uid: 0f28f5b2bf60536d78b2dbf003c13886dd452d926
-            #$ref: '#/components/examples/PayoutUid' 
+            -   **payment_balance**: transfer using your payment balance.
+            -   **wire_transfer**: transfer with wire transfer to EBANX bank account.

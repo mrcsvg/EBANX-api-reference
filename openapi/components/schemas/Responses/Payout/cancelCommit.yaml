@@ -1,5 +1,5 @@
 type: object 
-title: /ws/payout/balance
+title: /ws/payout/cancel or commit
 description: |
   Stub schema for search while i wait for the real one
 properties:
@@ -8,8 +8,7 @@ properties:
     description: |
       The type of the response (`success`, `api_error`, `authentication_error`, `invalid_request_error`, or `request_error`).
     example: "success"
-  balance:
-    type: number
+  message:
+    type: string
     description: |
-      the amount available for payouts.
-    example: 150.00
+      The response message.
