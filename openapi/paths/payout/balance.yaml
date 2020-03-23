@@ -1,7 +1,7 @@
 post:
   tags:
     - Payout
-  summary: Cancel any Payout request
+  summary: Get Available Balance.
   description: | 
     This method allows you to get your available balance.
   responses:
@@ -15,8 +15,7 @@ post:
             OK: #todo mudar
               value : 
                 {
-                  "status": "SUCCESS",
-                  }
+                  "status": "SUCCESS"
                 }     
     '400':
       description: 'invalid input, object invalid'
