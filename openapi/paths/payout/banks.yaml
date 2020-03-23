@@ -1,14 +1,22 @@
 post:
   tags:
     - Payout
-  summary: Cancel any Payout request
+  summary: Get Available Banks
   description: | 
-    Within this end-point you will be able to **cancel a payout** using payouts's *"external_reference"* or its *"uid"*   
-
-    The payout has to be in a status equal to OP and within the cancellation time.
+    The bank operation method call will return a JSON object with the all the available banks per country.
   responses:
     '201':
-      description: Payout created
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/Responses/Payout/banks.yaml'
+          examples:
+            OK: #todo mudar
+              value : 
+                {
+                  "status": "SUCCESS"
+                }     
     '400':
       description: 'invalid input, object invalid'
     '409':
@@ -17,10 +25,10 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../../components/schemas/Requests/Payout/cancel.yaml'
-        examples:
-          Search payout:
-            value:
-              integration_key: your_test_integration_key
-              uid: 0f28f5b2bf60536d78b2dbf003c13886dd452d926
-            #$ref: '#/components/examples/PayoutUid' 
+          $ref: '../../components/schemas/Requests/Payout/banks.yaml'
+    description: Exchange body object
+    required: true
+#  x-code-samples:
+#    - lang: Curl
+#      source:
+#        $ref: ../../../code_samples/CURL/exchange.curl
