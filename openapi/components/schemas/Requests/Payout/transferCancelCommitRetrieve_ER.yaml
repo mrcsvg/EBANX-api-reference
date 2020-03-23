@@ -1,9 +1,10 @@
 type: object 
-title: /ws/transfer/create
+title: /ws/transfer/commit
 description: |
   Stub schema for simulate while i wait for the real one
 required:
   - integration_key
+  - external_reference
 properties:
   integration_key:
     type: string
@@ -18,18 +19,24 @@ properties:
     minLength: 6
     maxLength: 40
     example: PAYOUT_TRANSFER_01
-  amount:
-    type: number
-    description: |
-      The amount in the specified currency (`currency_code`). E.g.,: 100.50
-    example: 100
-  source:
+  transfer_code:
     type: string
     description: |
-      Transfer source. Supported sources:
-
-      -   **payment_balance**: transfer using your payment balance.
-      -   **wire_transfer**: transfer with wire transfer to EBANX bank account.
-
-      Default value is `wire_transfer`.
-    example: "wire_transfer"
+      The unique transfer reference code.
+    minLength: 6
+    maxLength: 40
+    example: "14-2000"
+  settlement_code:
+    type: string
+    description: |
+      The transfer settlement code.
+    minLength: 6
+    maxLength: 40
+    example: "14-2000"
+  uid:
+    type: string
+    description: |
+      The transfer uid (EBANX unique identifier).
+    minLength: 50
+    maxLength: 50
+    example: "11ce3097af9ccf601b11038767962d3feded348ed"

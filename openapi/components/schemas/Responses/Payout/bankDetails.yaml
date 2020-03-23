@@ -1,26 +1,40 @@
-post:
-  tags:
-    - Payout
-  summary: Cancel any Payout request
-  description: | 
-    Within this end-point you will be able to **cancel a payout** using payouts's *"external_reference"* or its *"uid"*   
+type: object 
+title: /ws/payout/bankdetails
+description: |
+  Stub schema for search while i wait for the real one
+properties:
+  type:
+    type: string
+    description: |
+      The type of the response (`success`, `api_error`, `authentication_error`, `invalid_request_error`, or `request_error`).
+    example: "success"
+  country_name:
+    type: object
+    description: |
+      [country_name] can be one of the following values:
 
-    The payout has to be in a status equal to OP and within the cancellation time.
-  responses:
-    '201':
-      description: Payout created
-    '400':
-      description: 'invalid input, object invalid'
-    '409':
-      description: an existing item already exists
-  requestBody:
-    content:
-      application/json:
-        schema:
-          $ref: '../../components/schemas/Requests/Payout/cancel.yaml'
-        examples:
-          Search payout:
-            value:
-              integration_key: your_test_integration_key
-              uid: 0f28f5b2bf60536d78b2dbf003c13886dd452d926
-            #$ref: '#/components/examples/PayoutUid' 
+      -   **brazil**
+      -   **chile**
+      -   **colombia**
+      -   **mexico**
+      -   **peru**
+
+      A JSON object with all the available options for bank details in this country.
+    example: brazil
+    properties:
+      bank_name:
+        type: object
+        description: |
+          [bank_name] can be one of the values returned by **banks operation** or `_all` for all banks in this country.
+
+          A JSON object with all the available options for bank details in this bank.
+        example: itau
+        properties:
+          description:
+            type: string
+            description: |
+              A description of the bank detail information
+          value:
+            type: string
+            description: |
+              An array with the available values for bank detail information

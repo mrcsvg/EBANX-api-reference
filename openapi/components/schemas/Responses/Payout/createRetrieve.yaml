@@ -1,0 +1,180 @@
+type: object 
+title: /ws/payout/create
+description: |
+  Creates a payout to EBANX or Payee account.
+properties:
+  type:
+    type: string
+    description: |
+      The type of the response (`success`, `api_error`, `authentication_error`, `invalid_request_error`, or `request_error`).
+    example: "success"
+  payout:
+    type: object
+    description: |
+      A JSON object that represents the payout.
+    properties:
+      uid:
+        type: string
+        description: |
+          The payout uid (EBANX unique identifier).
+        maxLength: 50
+      external_reference:
+        type: string
+        description: |
+          The external transfer reference.
+        minLength: 6
+        maxLength: 40
+        example: PAYOUT_TRANSFER_01
+      status:
+        type: string
+        description: |
+          The payout status. The following statuses are available:
+          -   **OP**: the payout is waiting to start the payment process. It can change either to CA or to PE.
+          -   **PE**: the payout is in payment process.
+          -   **PA**: the payout is paid.
+          -   **CA**: the payout is canceled.
+        minLength: 2
+        maxLength: 2
+        example: PA
+      request_date:
+        type: string
+        description:
+          The date and hour of when the payout was requested. UTC Date.
+        minLength: 19
+        maxLength: 19
+      status_date:
+        type: string
+        description:
+          The date and hour of the last status change. UTC Date.
+        minLength: 19
+        maxLength: 19
+      paid_date:
+        type: string
+        description:
+          The date and hour of when the payout was paid. UTC Date.
+        minLength: 19
+        maxLength: 19
+      cancel_date:
+        type: string
+        description:
+          The date and hour of when the payout was cancelled. UTC Date.
+        minLength: 19
+        maxLength: 19
+      payee:
+        type: object
+        description: |
+          JSON with Payee information.
+        properties:
+          name: 
+            type: string
+            description: |
+              Payee full name.
+            example: "Han Solo"
+            minLength: 3
+            maxLength: 100
+          email: 
+            type: string
+            description: |
+              Payee email address.
+            format: email
+            example: "chew@bac.ca"
+            minLength: 10
+            maxLength: 100
+          phone:
+            type: string
+            description: |
+              Payee phone number.
+            example: "+554112345678"
+            minLength: 10
+            maxLength: 15
+          birthdate: 
+            type: string
+            description: |
+              Payee birthdate in the format `yyyy-mm-dd`.
+            format: yyyy-mm-dd
+            example: "1977-05-25"
+            minLength: 10
+            maxLength: 10
+          document:
+            type: string
+            description: |
+              Payee national identification number.
+            example: 85351346893
+            minLength: 32
+            maxLength: 32
+          document_type:
+            type: string
+            description: |
+              Payee national identification number type.
+            example: "cpf"
+            minLength: 5
+            maxLength: 5
+          bank_info:
+            type: object
+            description: |
+              JSON with Payee bank account information.
+            properties:
+              bank_name:
+                type: string
+                description: |
+                  Bank name.
+                example: "341 Itaú"
+              bank_branch:
+                type: string
+                description: |
+                  Bank Branch number.
+                example: "3707"
+              bank_account:
+                type: string
+                description: |
+                  Bank account number.
+                example: "01854-9"  
+              account_type:
+                type: string
+                description: |
+                  Bank account type.
+                example: "C"
+              bank_details:
+                type: string
+                description: |
+                  Additional information of bank account.
+                example: "001"
+      request_amount:
+        type: number
+        description: |
+          The amount in the original request currency.
+        example: 150.00
+      request_currency:
+        type: string
+        minLength: 3
+        maxLength: 3
+        description: |
+          Three-letter code of the original request currency. ISO 4217 three letter code
+        example: BRL
+      request_exchange_rate:
+        type: number
+        description: |
+          The exchage rate used in the payout to calculate the debited amount.
+      debit_amount:
+        type: number
+        description: |
+          The total amount debited to your account referring this payout.
+      debit_fee:
+        type: number
+        description: |
+          The fee amount of the payout.
+      debit_amount_total:
+        type: number
+        description: |
+          The total amount debited in your account referring to this payout and fee.
+      debit_currency:
+        type: string
+        minLength: 3
+        maxLength: 3
+        description: |
+          Three-letter code of the debit amount currency. ISO 4217 three letter code
+        example: USD
+      target:
+        type: string
+        description: |
+          Payout target. E.g., `bank_account` or `ebanx_wallet`
