@@ -77,6 +77,16 @@ paths:
     $ref: paths/payout/simulate.yaml
   /ws/payout/search:
     $ref: paths/payout/search.yaml
+  /ws/transfer/create:
+    $ref: paths/payout/transferCreate.yaml
+  /ws/transfer/cancel:
+    $ref: paths/payout/transferCancel.yaml
+  /ws/transfer/commit:
+    $ref: paths/payout/transferCommit.yaml
+  /ws/transfer/retrieve:
+    $ref: paths/payout/transferRetrieve.yaml
+  /ws/transfer/search:
+    $ref: paths/payout/transferSearch.yaml
 
   # Check customer balance
   /ws/documentBalance:

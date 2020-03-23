@@ -1,14 +1,24 @@
 post:
   tags:
     - Payout
-  summary: Cancel any Payout request
+  summary: Cancel a Transfer Request
   description: | 
-    Within this end-point you will be able to **cancel a payout** using payouts's *"external_reference"* or its *"uid"*   
+    This method allows you to cancel a transfer request.
 
-    The payout has to be in a status equal to OP and within the cancellation time.
+    *You have to send either the transfer_code, uid, settlement_code or external_reference.*
   responses:
     '201':
-      description: Payout created
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/Responses/Payout/cancelCommit.yaml'
+          examples:
+            OK: #todo mudar
+              value : 
+                {
+                  "status": "SUCCESS"
+                }   
     '400':
       description: 'invalid input, object invalid'
     '409':
@@ -17,10 +27,10 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../../components/schemas/Requests/Payout/cancel.yaml'
-        examples:
-          Search payout:
-            value:
-              integration_key: your_test_integration_key
-              uid: 0f28f5b2bf60536d78b2dbf003c13886dd452d926
-            #$ref: '#/components/examples/PayoutUid' 
+          $ref: '../../components/schemas/Requests/Payout/transferCancelCommitRetrieve.yaml'
+    description: Payout body object
+    required: true
+#  x-code-samples:
+#    - lang: Curl
+#      source:
+#        $ref: ../../code_samples/CURL/cancel.curl
