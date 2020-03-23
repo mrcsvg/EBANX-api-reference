@@ -61,6 +61,8 @@ paths:
   #Payout
   /ws/payout/balance:
     $ref: paths/payout/balance.yaml
+  /ws/payout/banks:
+    $ref: paths/payout/banks.yaml
   /ws/payout/bankDetails:
     $ref: paths/payout/bankDetails.yaml
   /ws/payout/create:
