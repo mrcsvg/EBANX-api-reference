@@ -1,40 +1,34 @@
-    post:
-      tags:
-        - Payout
-      summary: Create a Payout
-      description: This method allows you to create a payout.
-      responses:
-        '201':
-          description: Payout created
-        '400':
-          description: 'invalid input, object invalid'
-        '409':
-          description: an existing item already exists
-      requestBody:
-        description: Inventory item to add
-        content:
-          application/json:
-            schema:
-              $ref: '../../components/schemas/Requests/Payout/create.yaml'
-            examples:
-              Payout to EBANX Account (eWallet):
-                value:
-                  integration_key: your_test_integration_key
-                  external_reference: PAYOUT_EBANX_01
-                  country: br
-                  amount: 10
-                  currency_code: USD
-                  payee:
-                    name: Han Solo
-                    email: chew@bac.ca
-                    phone: '+554112345678'
-                    document: 85351346893
-                    document_type: cpf
-                    birthdate: '1977-05-25'
-#                $ref: '#/components/examples/PayoutToEBANKeWallet' 
-#              Payout to Payee bank account without sending bank data:
-#                $ref: '#/components/examples/PayoutToPayeeWithoutBankData' 
-#              Payout to Payee bank account sending bank data:
-#                $ref: '#/components/examples/PayoutToPayeeWithBankData'                 
-#              Payout to Payee bank account sending bank data with bank details:
-#                $ref: '#/components/examples/PayoutToPayeeWithBankDataAndDetails'                 
+post:
+  tags:
+    - Payout
+  summary: Create a Payout request
+  description: | 
+    This method allows you to create a payout.
+  responses:
+    '201':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '../../components/schemas/Responses/Payout/createRetrieve.yaml'
+          examples:
+            OK: #todo mudar
+              value : 
+                {
+                  "status": "SUCCESS"
+                }   
+    '400':
+      description: 'invalid input, object invalid'
+    '409':
+      description: an existing item already exists
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../components/schemas/Requests/Payout/create.yaml'
+    description: Payout body object
+    required: true
+#  x-code-samples:
+#    - lang: Curl
+#      source:
+#        $ref: ../../code_samples/CURL/cancel.curl
