@@ -1,4 +1,5 @@
-#The following example is a payout search request using only the date range
+# The following example is a payout search request 
+# using only the date range
 
 curl -X POST 'https://sandbox.ebanxpay.com/ws/payout/search' \
     -d 'integration_key=your_test_integration_key' \
