@@ -13,7 +13,11 @@ post:
             $ref: '../../components/schemas/Responses/Payout/balance.yaml'
           examples:
             OK: #todo mudar
-              $ref: ../../components/examples/Payout/balance.yaml
+              value : 
+                {
+                    "type": "success",
+                    "balance": 150.00
+                }  
     '400':
       description: 'invalid input, object invalid'
     '409':
