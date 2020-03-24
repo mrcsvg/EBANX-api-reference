@@ -14,9 +14,7 @@ post:
           examples:
             OK: #todo mudar
               value : 
-                {
-                  "status": "SUCCESS"
-                }     
+                $ref: ../../components/examples/Payout/balance.json
     '400':
       description: 'invalid input, object invalid'
     '409':
