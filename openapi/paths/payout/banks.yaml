@@ -21,7 +21,7 @@ post:
       description: 'invalid input, object invalid'
     '409':
       description: an existing item already exists
-#  x-code-samples:
-#    - lang: Curl
-#      source:
-#        $ref: ../../../code_samples/CURL/exchange.curl
+  x-code-samples:
+    - lang: Curl
+      source:
+        $ref: ../../code_samples/CURL/Payout/banks.curl

@@ -28,7 +28,12 @@ post:
           $ref: '../../components/schemas/Requests/Payout/transferCreate.yaml'
     description: Payout body object
     required: true
-#  x-code-samples:
-#    - lang: Curl
-#      source:
-#        $ref: ../../code_samples/CURL/cancel.curl
+  x-code-samples:
+    - lang: Curl
+      label: "Curl: EBANX Account"
+      source:
+        $ref: ../../code_samples/CURL/Payout/transferCreateEBANXAccount.curl
+    - lang: Curl
+      label: "Curl: Payment Balance"
+      source:
+        $ref: ../../code_samples/CURL/Payout/transferCreatePaymentBalance.curl
