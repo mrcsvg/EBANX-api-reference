@@ -13,8 +13,7 @@ post:
             $ref: '../../components/schemas/Responses/Payout/balance.yaml'
           examples:
             OK: #todo mudar
-              value : 
-                $ref: ../../components/examples/Payout/balance.yaml
+              $ref: ../../components/examples/Payout/balance.yaml
     '400':
       description: 'invalid input, object invalid'
     '409':
