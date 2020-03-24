@@ -1,0 +1,1 @@
+curl -X POST 'https://sandbox.ebanxpay.com/ws/payout/banks'

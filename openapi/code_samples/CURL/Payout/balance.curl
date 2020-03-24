@@ -1,2 +1,4 @@
+# The following example is a payout balance request:
+
 curl -X POST 'https://sandbox.ebanxpay.com/ws/payout/balance' \
     -d 'integration_key=your_test_integration_key'

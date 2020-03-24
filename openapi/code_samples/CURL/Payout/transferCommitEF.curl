@@ -1,3 +1,6 @@
+# The following example is a transfer commit request 
+# using transfer external_reference:
+
 curl -X POST 'https://sandbox.ebanxpay.com/ws/transfer/commit' \
     -d 'integration_key=your_test_integration_key' \
     -d 'external_reference=PAYOUT_TRANSFER_02'
