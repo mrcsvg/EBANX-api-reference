@@ -15,8 +15,34 @@ post:
             OK: #todo mudar
               value : 
                 {
-                  "status": "SUCCESS"
-                }     
+                  "type":"success",
+                  "brazil":{
+                    "104  Caixa Econômica":{
+                      "description":"Number of the operation required by Caixa Econômica",
+                      "values":[
+                        "001",
+                        "002",
+                        "003",
+                        "006",
+                        "007",
+                        "013",
+                        "022",
+                        "023",
+                        "028",
+                        "043"
+                      ]
+                    }
+                  },
+                  "colombia":{
+                    "_all":{
+                      "description":"Name of the city of account holder",
+                      "values":[
+                        "APARTADO",
+                        "VILLAVICENCIO"
+                      ]
+                    }
+                  }
+                }   
     '400':
       description: 'invalid input, object invalid'
     '409':
