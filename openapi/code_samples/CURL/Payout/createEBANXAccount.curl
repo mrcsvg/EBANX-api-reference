@@ -1,3 +1,6 @@
+# The following example is a payout create request 
+# to Payee EBANX Account:
+
 curl -X POST 'https://sandbox.ebanxpay.com/ws/payout/create' \
 -d 'integration_key=your_test_integration_key' \
 -d 'external_reference=PAYOUT_EBANX_01' \
