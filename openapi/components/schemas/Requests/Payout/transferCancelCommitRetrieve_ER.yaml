@@ -1,5 +1,5 @@
 type: object 
-title: /ws/transfer/commit
+title: external_reference
 description: |
   Stub schema for simulate while i wait for the real one
 required:
