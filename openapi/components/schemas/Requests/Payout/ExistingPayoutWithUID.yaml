@@ -1,4 +1,5 @@
 type: object 
+title: "uid"
 description: |
   Works for cancel, commit and retrieve
 required:

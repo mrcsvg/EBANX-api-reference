@@ -1,4 +1,5 @@
 type: object 
+title: "external_reference"
 description: |
   Works for cancel, commit and retrieve
 required:
