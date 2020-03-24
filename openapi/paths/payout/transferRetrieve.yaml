@@ -17,8 +17,19 @@ post:
             OK: #todo mudar
               value : 
                 {
-                  "status": "SUCCESS"
-                }   
+                  "type": "success",
+                  "transfer": {
+                    "uid": "11ce3097af9ccf601b11038123962d3feded348ed",
+                    "external_reference": "PAYOUT_TRANSFER_02",
+                    "status": "OP",
+                    "request_date": "2017-02-08 17:33:56",
+                    "confirm_date": null,
+                    "cancel_date": null,
+                    "amount": "150.00",
+                    "settlement_code": "14-2001",
+                    "source": "payment_balance"
+                  }
+                }
     '400':
       description: 'invalid input, object invalid'
     '409':
