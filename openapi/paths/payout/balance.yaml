@@ -14,7 +14,7 @@ post:
           examples:
             OK: #todo mudar
               value : 
-                $ref: ../../components/examples/Payout/balance.json
+                $ref: ../../components/examples/Payout/balance.yaml
     '400':
       description: 'invalid input, object invalid'
     '409':
