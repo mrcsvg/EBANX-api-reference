@@ -30,12 +30,12 @@ post:
           $ref: '../../components/schemas/Requests/Payout/ExistingPayout.yaml'
     description: Payout body object
     required: true
-#  x-code-samples:
-#    - lang: Curl
-#      label: "Curl: external_reference"
-#      source:
-#        $ref: ../../code_samples/CURL/Payout/commitEF.curl
-#    - lang: Curl
-#      label: "Curl: uid"
-#      source:
-#        $ref: ../../code_samples/CURL/Payout/commitUID.curl
+  x-code-samples:
+    - lang: Curl
+      label: "Curl: external_reference"
+      source:
+        $ref: ../../code_samples/CURL/Payout/commitEF.curl
+    - lang: Curl
+      label: "Curl: uid"
+      source:
+        $ref: ../../code_samples/CURL/Payout/commitUID.curl

@@ -28,7 +28,7 @@ post:
           $ref: '../../components/schemas/Requests/Payout/balance.yaml'
     description: Exchange body object
     required: true
-#  x-code-samples:
-#    - lang: Curl
-#      source:
-#        $ref: ../../../code_samples/CURL/Payout/balance.curl
+  x-code-samples:
+    - lang: Curl
+      source:
+        $ref: ../../code_samples/CURL/Payout/balance.curl

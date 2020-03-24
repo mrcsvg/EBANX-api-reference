@@ -28,7 +28,7 @@ post:
           $ref: '../../components/schemas/Requests/Payout/create.yaml'
     description: Payout body object
     required: true
-#  x-code-samples:
-#    - lang: Curl
-#      source:
-#        $ref: ../../../code_samples/CURL/Payout/create.curl
+  x-code-samples:
+    - lang: Curl
+      source:
+        $ref: ../../code_samples/CURL/Payout/create.curl
