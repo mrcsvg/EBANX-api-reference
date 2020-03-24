@@ -28,7 +28,16 @@ post:
           $ref: '../../components/schemas/Requests/Payout/search.yaml'
     description: Payout body object
     required: true
-#  x-code-samples:
-#    - lang: Curl
-#      source:
-#        $ref: ../../code_samples/CURL/cancel.curl
+  x-code-samples:
+    - lang: Curl
+      label: "Curl: Date Range"
+      source:
+        $ref: ../../code_samples/CURL/Payout/searchDateRange.curl
+    - lang: Curl
+      label: "Curl: Status"
+      source:
+        $ref: ../../code_samples/CURL/Payout/searchStatus.curl
+    - lang: Curl
+      label: "Curl: Pages"
+      source:
+        $ref: ../../code_samples/CURL/Payout/searchPage.curl
