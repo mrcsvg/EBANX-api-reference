@@ -1,0 +1,3 @@
+curl -X POST 'https://sandbox.ebanxpay.com/ws/transfer/cancel' \
+    -d 'integration_key=your_test_integration_key' \
+    -d 'transfer_code=14-2000'

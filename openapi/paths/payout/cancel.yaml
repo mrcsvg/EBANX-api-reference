@@ -30,7 +30,7 @@ post:
           $ref: '../../components/schemas/Requests/Payout/ExistingPayout.yaml'
     description: Payout body object
     required: true
-#  x-code-samples:
-#    - lang: Curl
-#      source:
-#        $ref: ../../code_samples/CURL/cancel.curl
+  x-code-samples:
+    - lang: Curl
+      source:
+        $ref: ../../code_samples/CURL/Payout/cancelEF.curl

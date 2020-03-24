@@ -1,0 +1,5 @@
+curl -X POST 'https://sandbox.ebanxpay.com/ws/payout/simulate' \
+    -d 'integration_key=your_test_integration_key' \
+    -d 'country=br' \
+    -d 'amount=10' \
+    -d 'currency_code=USD'
