@@ -1,0 +1,6 @@
+curl -X POST 'https://sandbox.ebanxpay.com/ws/transfer/search' \
+    -d 'integration_key=your_test_integration_key' \
+    -d 'date_from=2017-02-07' \
+    -d 'date_to=2017-02-08' \
+    -d 'per_page=1' \
+    -d 'page=2'

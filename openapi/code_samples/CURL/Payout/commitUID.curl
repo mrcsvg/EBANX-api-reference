@@ -1,0 +1,3 @@
+curl -X POST 'https://sandbox.ebanxpay.com/ws/payout/commit' \
+    -d 'integration_key=your_test_integration_key' \
+    -d 'uid=0f28f5b2bf60536d78b2dbf003c13886dd452d926'

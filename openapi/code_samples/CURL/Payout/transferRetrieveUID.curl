@@ -1,0 +1,3 @@
+curl -X POST 'https://sandbox.ebanxpay.com/ws/transfer/retrieve' \
+    -d 'integration_key=your_test_integration_key' \
+    -d 'uid=11ce3097af9ccf601b11038767962d3feded348ed'
