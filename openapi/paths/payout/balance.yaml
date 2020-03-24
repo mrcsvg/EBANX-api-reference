@@ -15,8 +15,9 @@ post:
             OK: #todo mudar
               value : 
                 {
-                  "status": "SUCCESS"
-                }     
+                    "type": "success",
+                    "balance": 150.00
+                }  
     '400':
       description: 'invalid input, object invalid'
     '409':
