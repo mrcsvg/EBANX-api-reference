@@ -15,8 +15,17 @@ post:
             OK: #todo mudar
               value : 
                 {
-                  "status": "SUCCESS"
-                }   
+                  "type": "success",
+                  "payout": {
+                    "request_amount": "10",
+                    "request_currency": "USD",
+                    "request_exchange_rate": 1,
+                    "debit_amount": 10,
+                    "debit_fee": 0.3,
+                    "debit_amount_total": 10.3,
+                    "debit_currency": "USD"
+                  }
+                }
     '400':
       description: 'invalid input, object invalid'
     '409':
