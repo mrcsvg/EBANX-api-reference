@@ -30,7 +30,16 @@ post:
           $ref: '../../components/schemas/Requests/Payout/transferCancelCommitRetrieve.yaml'
     description: Payout body object
     required: true
-#  x-code-samples:
-#    - lang: Curl
-#      source:
-#        $ref: ../../code_samples/CURL/cancel.curl
+  x-code-samples:
+    - lang: Curl
+      label: "Curl: external_reference"
+      source:
+        $ref: ../../code_samples/CURL/Payout/transferCommitEF.curl
+    - lang: Curl
+      label: "Curl: uid"
+      source:
+        $ref: ../../code_samples/CURL/Payout/transferCommitUID.curl
+    - lang: Curl
+      label: "Curl: settlement_code"
+      source:
+        $ref: ../../code_samples/CURL/Payout/transferCommitSC.curl
