@@ -1,0 +1,8 @@
+# The following example is a transfer create request
+# using Payment Balance:
+
+curl -X POST 'https://sandbox.ebanxpay.com/ws/transfer/create' \
+    -d 'integration_key=your_test_integration_key' \
+    -d 'external_reference=PAYOUT_TRANSFER_02' \
+    -d 'amount=150' \
+    -d 'source=payment_balance'

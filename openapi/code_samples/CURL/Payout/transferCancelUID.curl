@@ -1,3 +1,6 @@
+# The following example is a transfer cancel request 
+# using transfer uid:
+
 curl -X POST 'https://sandbox.ebanxpay.com/ws/transfer/cancel' \
     -d 'integration_key=your_test_integration_key' \
     -d 'uid=11ce3097af9ccf601b11038767962d3feded348ed'
