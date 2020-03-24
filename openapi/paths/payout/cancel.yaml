@@ -32,5 +32,6 @@ post:
     required: true
   x-code-samples:
     - lang: Curl
+      label: "Curl: external_reference"
       source:
         $ref: ../../code_samples/CURL/Payout/cancelEF.curl
