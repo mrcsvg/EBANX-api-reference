@@ -1,0 +1,20 @@
+# The following example is a payout create request to Payee 
+# bank account sending bank data with bank details:
+
+curl -X POST 'https://sandbox.ebanxpay.com/ws/payout/create' \
+-d 'integration_key=your_test_integration_key' \
+-d 'external_reference=PAYOUT_EBANX_04' \
+-d 'country=br' \
+-d 'amount=10' \
+-d 'currency_code=USD' \
+-d 'payee[name]=Han Solo' \
+-d 'payee[email]=chew@bac.ca' \
+-d 'payee[phone]=+554112345678' \
+-d 'payee[document]=85351346893' \
+-d 'payee[document_type]=cpf' \
+-d 'payee[birthdate]=1977-05-25' \
+-d 'payee[bank_info][bank_name]=104 Caixa Econômica' \
+-d 'payee[bank_info][bank_branch]=3708' \
+-d "payee[bank_info][bank_account]=08251777-6" \
+-d 'payee[bank_info][account_type]=C' \
+-d 'payee[bank_info][bank_details]=001'

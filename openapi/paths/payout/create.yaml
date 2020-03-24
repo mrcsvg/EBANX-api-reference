@@ -30,5 +30,18 @@ post:
     required: true
   x-code-samples:
     - lang: Curl
+      label: "Curl: EBANX Account"
       source:
-        $ref: ../../code_samples/CURL/Payout/create.curl
+        $ref: ../../code_samples/CURL/Payout/createEBANXAccount.curl
+    - lang: Curl
+      label: "Curl: No Bank Data"
+      source:
+        $ref: ../../code_samples/CURL/Payout/createNoBankData.curl
+    - lang: Curl
+      label: "Curl: With Bank Data"
+      source:
+        $ref: ../../code_samples/CURL/Payout/createBankData.curl
+    - lang: Curl
+      label: "Curl: With Bank Details"
+      source:
+        $ref: ../../code_samples/CURL/Payout/createBankDetails.curl
