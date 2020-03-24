@@ -15,8 +15,40 @@ post:
             OK: #todo mudar
               value : 
                 {
-                  "status": "SUCCESS"
-                }     
+                  "type":"success",
+                  "argentina":{
+                    "005":"AMBN AMRO BANK N. V.",
+                    "389":"BANCO COLUMBIA S.A."
+                  },
+                  "bolivia":[
+                    "10001 Banco de Desarrollo Productivo S.A.M.",
+                    "74003 Banco PYME de la Comunidad S.A."
+                  ],
+                  "brazil":[
+                    "104  Caixa Econômica",
+                    "001  Banco do Brasil"
+                  ],
+                  "chile":[
+                    "001  BANCO DE CHILE",
+                    "504  SCOTIABANK AZUL (BBVA)"
+                  ],
+                  "colombia":[
+                    "1040  Banco Agrario",
+                    "1014  Helm Bank S.A"
+                  ],
+                  "ecuador":[
+                    "BANCO AMAZONAS S.A.",
+                    "BANCO DINERS CLUB DEL ECUADOR"
+                  ],
+                  "mexico":{
+                    "001":"BANCO - BANXICO",
+                    "168":"HIFED - HIPOTECARIA FEDERAL"
+                  },
+                  "peru":[
+                    "BCP - BANCO DE CREDITO DO PERU",
+                    "INTERBANK"
+                  ]
+                }  
     '400':
       description: 'invalid input, object invalid'
     '409':
