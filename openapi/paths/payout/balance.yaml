@@ -31,4 +31,4 @@ post:
 #  x-code-samples:
 #    - lang: Curl
 #      source:
-#        $ref: ../../../code_samples/CURL/exchange.curl
+#        $ref: ../../../code_samples/CURL/Payout/balance.curl

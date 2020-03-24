@@ -38,4 +38,4 @@ post:
     - lang: Curl
       label: "Curl: uid"
       source:
-        $ref: ../../code_samples/CURL/Payout/cancelEF.curl
+        $ref: ../../code_samples/CURL/Payout/cancelUID.curl
