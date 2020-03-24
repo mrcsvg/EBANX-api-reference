@@ -35,7 +35,6 @@ post:
       label: "Curl: external_reference"
       source:
         $ref: ../../code_samples/CURL/Payout/commitEF.curl
-  x-code-samples:
     - lang: Curl
       label: "Curl: uid"
       source:
