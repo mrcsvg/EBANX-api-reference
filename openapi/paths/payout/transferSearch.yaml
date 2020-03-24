@@ -12,11 +12,83 @@ post:
           schema:
             $ref: '../../components/schemas/Responses/Payout/transferSearch.yaml'
           examples:
-            OK: #todo mudar
+            Date Range:
               value : 
                 {
-                  "status": "SUCCESS"
-                }   
+                  "type":"success",
+                  "records":"2",
+                  "total_pages":1,
+                  "per_page":50,
+                  "page":1,
+                  "transfers":[
+                    {
+                      "uid":"11ce3097af9ccf601b11038767962d3feded348ed",
+                      "external_reference":"PAYOUT_TRANSFER_01",
+                      "status":"OP",
+                      "request_date":"2017-02-08 17:33:56",
+                      "confirm_date":null,
+                      "cancel_date":null,
+                      "amount":"100.00",
+                      "transfer_code":"14-2000",
+                      "source":"wire_transfer"
+                    },
+                    {
+                      "uid":"11ce3097af9ccf601b11038123962d3feded348ed",
+                      "external_reference":"PAYOUT_TRANSFER_02",
+                      "status":"OP",
+                      "request_date":"2017-02-08 17:33:56",
+                      "confirm_date":null,
+                      "cancel_date":null,
+                      "amount":"150.00",
+                      "settlement_code":null,
+                      "source":"payment_balance"
+                    }
+                  ]
+                }  
+            Status:
+              value:
+                {
+                  "type":"success",
+                  "records":"1",
+                  "total_pages":1,
+                  "per_page":50,
+                  "page":1,
+                  "transfers":[
+                    {
+                      "uid":"11ce3097af9ccf601b11038767962d3feded348ed",
+                      "external_reference":"PAYOUT_TRANSFER_03",
+                      "status":"CO",
+                      "request_date":"2017-02-08 17:33:56",
+                      "confirm_date":"2017-02-08 17:55:56",
+                      "cancel_date":null,
+                      "amount":"150.00",
+                      "transfer_code":"14-2000",
+                      "source":"wire_transfer"
+                    }
+                  ]
+                }
+            Page:
+              value:
+                {
+                  "type":"success",
+                  "records":"2",
+                  "total_pages":2,
+                  "per_page":"1",
+                  "page":"2",
+                  "transfers":[
+                    {
+                      "uid":"1474d4f6c946df3449224ea6b61ae00ae6a56928a",
+                      "external_reference":"PAYOUT_TRANSFER_04",
+                      "status":"OP",
+                      "request_date":"2017-02-08 19:34:20",
+                      "confirm_date":null,
+                      "cancel_date":null,
+                      "amount":"250.00",
+                      "transfer_code":"14-2001",
+                      "source":"wire_transfer"
+                    }
+                  ]
+                }
     '400':
       description: 'invalid input, object invalid'
     '409':
