@@ -12,11 +12,259 @@ post:
           schema:
             $ref: '../../components/schemas/Responses/Payout/search.yaml'
           examples:
-            OK: #todo mudar
+            Date Range:
               value : 
                 {
-                  "status": "SUCCESS"
-                }   
+                  "type":"success",
+                  "records":"5",
+                  "total_pages":1,
+                  "per_page":50,
+                  "page":1,
+                  "payouts":[
+                    {
+                      "uid":"0f28f5b2bf60536d78b2dbf003c13886dd452d926",
+                      "external_reference":"PAYOUT_EBANX_01",
+                      "status":"PA",
+                      "request_date":"2017-02-07 17:01:59",
+                      "status_date":"2017-02-07 17:03:15",
+                      "paid_date":"2017-02-07 17:03:15",
+                      "cancel_date":null,
+                      "payee":{
+                        "name":"Han Solo",
+                        "email":"chew@bac.ca",
+                        "phone":" 554112345678",
+                        "document":"85351346893",
+                        "document_type":"CPF",
+                        "birthdate":"1977-05-25",
+                        "bank_info":null
+                      },
+                      "request_amount":"10.00",
+                      "request_currency":"USD",
+                      "request_exchange_rate":"1.0000",
+                      "debit_amount":"10.00",
+                      "debit_fee":"0.15",
+                      "debit_amount_total":"10.15",
+                      "debit_currency":"USD",
+                      "target":"ebanx_wallet"
+                    },
+                    {
+                      "uid":"07af7cd0fd2f64a4953cc707bf09811ddf83ec090",
+                      "external_reference":"PAYOUT_EBANX_02",
+                      "status":"PE",
+                      "request_date":"2017-02-07 17:11:43",
+                      "status_date":"2017-02-07 17:12:46",
+                      "paid_date":null,
+                      "cancel_date":null,
+                      "payee":{
+                        "name":"Han Solo",
+                        "email":"chew@bac.ca",
+                        "phone":" 554112345678",
+                        "document":"85351346893",
+                        "document_type":"CPF",
+                        "birthdate":"1977-05-25",
+                        "bank_info":null
+                      },
+                      "request_amount":"10.00",
+                      "request_currency":"USD",
+                      "request_exchange_rate":"1.0000",
+                      "debit_amount":"10.00",
+                      "debit_fee":"0.15",
+                      "debit_amount_total":"10.15",
+                      "debit_currency":"USD",
+                      "target":"bank_account"
+                    },
+                    {
+                      "uid":"0bf887fdadeef424a857c2bff69b94db0fb77f071",
+                      "external_reference":"PAYOUT_EBANX_03",
+                      "status":"PE",
+                      "request_date":"2017-02-07 19:45:38",
+                      "status_date":"2017-02-07 19:46:38",
+                      "paid_date":null,
+                      "cancel_date":null,
+                      "payee":{
+                        "name":"Han Solo",
+                        "email":"chew@bac.ca",
+                        "phone":" 554112345678",
+                        "document":"85351346893",
+                        "document_type":"CPF",
+                        "birthdate":"1977-05-25",
+                        "bank_info":{
+                          "bank_name":"341  Itaú",
+                          "bank_branch":"3707",
+                          "bank_account":"01854-9",
+                          "account_type":"C",
+                          "bank_details":null
+                        }
+                      },
+                      "request_amount":"10.00",
+                      "request_currency":"USD",
+                      "request_exchange_rate":"1.0000",
+                      "debit_amount":"10.00",
+                      "debit_fee":"0.15",
+                      "debit_amount_total":"10.15",
+                      "debit_currency":"USD",
+                      "target":"bank_account"
+                    },
+                    {
+                      "uid":"0e495f7a4409c032d54376084b10b9c771e9b39f0",
+                      "external_reference":"PAYOUT_EBANX_04",
+                      "status":"PE",
+                      "request_date":"2017-02-07 20:00:15",
+                      "status_date":"2017-02-07 20:01:15",
+                      "paid_date":null,
+                      "cancel_date":null,
+                      "payee":{
+                        "name":"Han Solo",
+                        "email":"chew@bac.ca",
+                        "phone":" 554112345678",
+                        "document":"85351346893",
+                        "document_type":"CPF",
+                        "birthdate":"1977-05-25",
+                        "bank_info":{
+                          "bank_name":"104  Caixa Econômica",
+                          "bank_branch":"3708",
+                          "bank_account":"08251777-6",
+                          "account_type":"C",
+                          "bank_details":"001"
+                        }
+                      },
+                      "request_amount":"10.00",
+                      "request_currency":"USD",
+                      "request_exchange_rate":"1.0000",
+                      "debit_amount":"10.00",
+                      "debit_fee":"0.15",
+                      "debit_amount_total":"10.15",
+                      "debit_currency":"USD",
+                      "target":"bank_account"
+                    },
+                    {
+                      "uid":"088d8930148d84205a82efddb53f9a6c003a122c1",
+                      "external_reference":"PAYOUT_EBANX_05",
+                      "status":"PA",
+                      "request_date":"2017-02-07 20:31:44",
+                      "status_date":"2017-02-07 20:32:52",
+                      "paid_date":"2017-02-07 20:32:52",
+                      "cancel_date":null,
+                      "payee":{
+                        "name":"Han Solo",
+                        "email":"chew@bac.ca",
+                        "phone":" 554112345678",
+                        "document":null,
+                        "document_type":null,
+                        "birthdate":"1977-05-25",
+                        "bank_info":null
+                      },
+                      "request_amount":"10.00",
+                      "request_currency":"USD",
+                      "request_exchange_rate":"1.0000",
+                      "debit_amount":"10.00",
+                      "debit_fee":"0.30",
+                      "debit_amount_total":"10.30",
+                      "debit_currency":"USD",
+                      "target":"ebanx_wallet"
+                    }
+                  ]
+                }
+            Status:
+              value:
+                {
+                  "type":"success",
+                  "records":"2",
+                  "total_pages":1,
+                  "per_page":50,
+                  "page":1,
+                  "payouts":[
+                    {
+                      "uid":"0f28f5b2bf60536d78b2dbf003c13886dd452d926",
+                      "external_reference":"PAYOUT_EBANX_01",
+                      "status":"PA",
+                      "request_date":"2017-02-07 17:01:59",
+                      "status_date":"2017-02-07 17:03:15",
+                      "paid_date":"2017-02-07 17:03:15",
+                      "cancel_date":null,
+                      "payee":{
+                        "name":"Han Solo",
+                        "email":"chew@bac.ca",
+                        "phone":" 554112345678",
+                        "document":"85351346893",
+                        "document_type":"CPF",
+                        "birthdate":"1977-05-25",
+                        "bank_info":null
+                      },
+                      "request_amount":"10.00",
+                      "request_currency":"USD",
+                      "request_exchange_rate":"1.0000",
+                      "debit_amount":"10.00",
+                      "debit_fee":"0.15",
+                      "debit_amount_total":"10.15",
+                      "debit_currency":"USD",
+                      "target":"ebanx_wallet"
+                    },
+                    {
+                      "uid":"088d8930148d84205a82efddb53f9a6c003a122c1",
+                      "external_reference":"PAYOUT_EBANX_05",
+                      "status":"PA",
+                      "request_date":"2017-02-07 20:31:44",
+                      "status_date":"2017-02-07 20:32:52",
+                      "paid_date":"2017-02-07 20:32:52",
+                      "cancel_date":null,
+                      "payee":{
+                        "name":"Han Solo",
+                        "email":"chew@bac.ca",
+                        "phone":" 554112345678",
+                        "document":null,
+                        "document_type":null,
+                        "birthdate":"1977-05-25",
+                        "bank_info":null
+                      },
+                      "request_amount":"10.00",
+                      "request_currency":"USD",
+                      "request_exchange_rate":"1.0000",
+                      "debit_amount":"10.00",
+                      "debit_fee":"0.30",
+                      "debit_amount_total":"10.30",
+                      "debit_currency":"USD",
+                      "target":"ebanx_wallet"
+                    }
+                  ]
+                }
+            Page:
+              value:
+                {
+                  "type":"success",
+                  "records":"2",
+                  "total_pages":2,
+                  "per_page":"1",
+                  "page":"2",
+                  "payouts":[
+                    {
+                      "uid":"088d8930148d84205a82efddb53f9a6c003a122c1",
+                      "external_reference":"PAYOUT_EBANX_05",
+                      "status":"PA",
+                      "request_date":"2017-02-07 20:31:44",
+                      "status_date":"2017-02-07 20:32:52",
+                      "paid_date":"2017-02-07 20:32:52",
+                      "cancel_date":null,
+                      "payee":{
+                        "name":"Han Solo",
+                        "email":"chew@bac.ca",
+                        "phone":" 554112345678",
+                        "document":null,
+                        "document_type":null,
+                        "birthdate":"1977-05-25",
+                        "bank_info":null
+                      },
+                      "request_amount":"10.00",
+                      "request_currency":"USD",
+                      "request_exchange_rate":"1.0000",
+                      "debit_amount":"10.00",
+                      "debit_fee":"0.30",
+                      "debit_amount_total":"10.30",
+                      "debit_currency":"USD",
+                      "target":"ebanx_wallet"
+                    }
+                  ]
+                }
     '400':
       description: 'invalid input, object invalid'
     '409':
