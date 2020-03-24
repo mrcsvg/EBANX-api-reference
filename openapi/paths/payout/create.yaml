@@ -12,11 +12,66 @@ post:
           schema:
             $ref: '../../components/schemas/Responses/Payout/createRetrieve.yaml'
           examples:
-            OK: #todo mudar
+            EBANX Account: #todo mudar
               value : 
                 {
-                  "status": "SUCCESS"
-                }   
+                  "type":"success",
+                  "payout":{
+                    "uid":"0f28f5b2bf60536d78b2dbf003c13886dd452d926",
+                    "external_reference":"PAYOUT_EBANX_01",
+                    "status":"OP",
+                    "request_date":"2017-02-07 17:01:59",
+                    "status_date":null,
+                    "paid_date":null,
+                    "cancel_date":null,
+                    "payee":{
+                      "name":"Han Solo",
+                      "email":"chew@bac.ca",
+                      "phone":" 554112345678",
+                      "document":"85351346893",
+                      "document_type":"CPF",
+                      "birthdate":"1977-05-25",
+                      "bank_info":null
+                    },
+                    "request_amount":"10.00",
+                    "request_currency":"USD",
+                    "request_exchange_rate":"1.0000",
+                    "debit_amount":"10.00",
+                    "debit_fee":"0.15",
+                    "debit_amount_total":"10.15",
+                    "debit_currency":"USD"
+                  }
+                } 
+            No Bank Data:
+              value:
+                {
+                  "type":"success",
+                  "payout":{
+                    "uid":"07af7cd0fd2f64a4953cc707bf09811ddf83ec090",
+                    "external_reference":"PAYOUT_EBANX_02",
+                    "status":"OP",
+                    "request_date":"2017-02-07 17:11:43",
+                    "status_date":null,
+                    "paid_date":null,
+                    "cancel_date":null,
+                    "payee":{
+                      "name":"Han Solo",
+                      "email":"chew@bac.ca",
+                      "phone":" 554112345678",
+                      "document":"85351346893",
+                      "document_type":"CPF",
+                      "birthdate":"1977-05-25",
+                      "bank_info":null
+                    },
+                    "request_amount":"10.00",
+                    "request_currency":"USD",
+                    "request_exchange_rate":"1.0000",
+                    "debit_amount":"10.00",
+                    "debit_fee":"0.15",
+                    "debit_amount_total":"10.15",
+                    "debit_currency":"USD"
+                  }
+                }
     '400':
       description: 'invalid input, object invalid'
     '409':
