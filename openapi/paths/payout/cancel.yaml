@@ -17,8 +17,9 @@ post:
             OK: #todo mudar
               value : 
                 {
-                  "status": "SUCCESS"
-                }   
+                  "type": "success",
+                  "message": "You've successfully cancelled your Payout!"
+                }
     '400':
       description: 'invalid input, object invalid'
     '409':

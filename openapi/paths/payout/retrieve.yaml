@@ -15,8 +15,34 @@ post:
             OK: #todo mudar
               value : 
                 {
-                  "status": "SUCCESS"
-                }   
+                  "type": "success",
+                  "payout": {
+                      "uid": "0f28f5b2bf60536d78b2dbf003c13886dd452d926",
+                      "external_reference": "PAYOUT_EBANX_ACCOUNT_01",
+                      "status": "PA",
+                      "request_date": "2017-02-07 17:01:59",
+                      "status_date": "2017-02-07 17:03:15",
+                      "paid_date": "2017-02-07 17:03:15",
+                      "cancel_date": null,
+                      "payee": {
+                        "name": "Han Solo",
+                        "email": "chew@bac.ca",
+                        "phone": " 554112345678",
+                        "document": "08271284959",
+                        "document_type": "CPF",
+                        "birthdate": "1977-05-25",
+                        "bank_info": null
+                      },
+                      "request_amount": "10.00",
+                      "request_currency": "USD",
+                      "request_exchange_rate": "1.0000",
+                      "debit_amount": "10.00",
+                      "debit_fee": "0.15",
+                      "debit_amount_total": "10.15",
+                      "debit_currency": "USD",
+                      "target": "ebanx_wallet"
+                  }
+                } 
     '400':
       description: 'invalid input, object invalid'
     '409':
