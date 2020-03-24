@@ -108,42 +108,42 @@ post:
                   "debit_currency":"USD"
                 }
               }
-          With Bank Details:
-            value:
-              {
-                "type":"success",
-                "payout":{
-                  "uid":"0e495f7a4409c032d54376084b10b9c771e9b39f0",
-                  "external_reference":"PAYOUT_EBANX_04",
-                  "status":"OP",
-                  "request_date":"2017-02-07 20:00:15",
-                  "status_date":null,
-                  "paid_date":null,
-                  "cancel_date":null,
-                  "payee":{
-                    "name":"Han Solo",
-                    "email":"chew@bac.ca",
-                    "phone":" 554112345678",
-                    "document":"85351346893",
-                    "document_type":"CPF",
-                    "birthdate":"1977-05-25",
-                    "bank_info":{
-                      "bank_name":"104 Caixa Econômica",
-                      "bank_branch":"3708",
-                      "bank_account":"08251777-6",
-                      "account_type":"C",
-                      "bank_details":"001"
-                    }
-                  },
-                  "request_amount":"10.00",
-                  "request_currency":"USD",
-                  "request_exchange_rate":"1.0000",
-                  "debit_amount":"10.00",
-                  "debit_fee":"0.15",
-                  "debit_amount_total":"10.15",
-                  "debit_currency":"USD"
+            With Bank Details:
+              value:
+                {
+                  "type":"success",
+                  "payout":{
+                    "uid":"0e495f7a4409c032d54376084b10b9c771e9b39f0",
+                    "external_reference":"PAYOUT_EBANX_04",
+                    "status":"OP",
+                    "request_date":"2017-02-07 20:00:15",
+                    "status_date":null,
+                    "paid_date":null,
+                    "cancel_date":null,
+                    "payee":{
+                      "name":"Han Solo",
+                      "email":"chew@bac.ca",
+                      "phone":" 554112345678",
+                      "document":"85351346893",
+                      "document_type":"CPF",
+                      "birthdate":"1977-05-25",
+                      "bank_info":{
+                        "bank_name":"104 Caixa Econômica",
+                        "bank_branch":"3708",
+                        "bank_account":"08251777-6",
+                        "account_type":"C",
+                        "bank_details":"001"
+                      }
+                    },
+                    "request_amount":"10.00",
+                    "request_currency":"USD",
+                    "request_exchange_rate":"1.0000",
+                    "debit_amount":"10.00",
+                    "debit_fee":"0.15",
+                    "debit_amount_total":"10.15",
+                    "debit_currency":"USD"
+                  }
                 }
-              }
     '400':
       description: 'invalid input, object invalid'
     '409':
